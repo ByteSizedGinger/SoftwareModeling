@@ -16,7 +16,8 @@ class CurrentSeason: public Car {
 		void addPoints(int p);
 		void simulate();
 		int getPoints();
-		calculateSpeed()
+		int calculateSpeed();
+		CurrentSeason* clone();
 };
 
 #endif

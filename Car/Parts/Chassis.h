@@ -2,7 +2,7 @@
 #define CHASIS_H
 
 #include <string>
-#include "Car/Car.h"
+#include "Car/Parts/DepartmentOutput.h"
 
 using namespace std;
 
