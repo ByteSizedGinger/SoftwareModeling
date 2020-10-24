@@ -1,4 +1,5 @@
-#include "Race.h"
+#include "Season/Race.h"
+#include "Car/Car.h"
 
 Race::Race() {
 	// TODO - implement Race::Race
@@ -34,7 +35,7 @@ int Race::getDate() {
 	return this->date;
 }
 
-boolean Race::isEuropean() {
+bool Race::isEuropean() {
 	// TODO - implement Race::isEuropean
 	throw "Not yet implemented";
 }

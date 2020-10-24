@@ -20,7 +20,7 @@ void Team::orderTyres() {
 	throw "Not yet implemented";
 }
 
-currentSeason** Team::getCurrentSeasonCars() {
+CurrentSeason** Team::getCurrentSeasonCars() {
 	// TODO - implement Team::getCurrentSeasonCars
 	throw "Not yet implemented";
 }

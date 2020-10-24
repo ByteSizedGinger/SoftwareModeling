@@ -11,9 +11,9 @@ private:
 	Department** departments;
 	int name;
 
+public:
 	Team();
 
-public:
 	Team(int string_name);
 
 	void transport();

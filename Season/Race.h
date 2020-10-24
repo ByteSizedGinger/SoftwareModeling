@@ -1,11 +1,16 @@
 #ifndef RACE_H
 #define RACE_H
 
+#include <string>
+#include "Car/Car.h"
+
+using namespace std;
+
 class Race {
 
 private:
 	int laps;
-	boolean european;
+	bool european;
 	int date;
 	string name;
 	Car** cars;
@@ -25,7 +30,7 @@ public:
 
 	int getDate();
 
-	boolean isEuropean();
+	bool isEuropean();
 
 	void runFreePractice2();
 
