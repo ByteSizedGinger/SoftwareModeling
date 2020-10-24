@@ -1,5 +1,5 @@
-#ifndef TRANSPORTSTRATEGY_H
-#define TRANSPORTSTRATEGY_H
+#ifndef CONTAINER_H
+#define CONTAINER_H
 
 #include <string>
 
