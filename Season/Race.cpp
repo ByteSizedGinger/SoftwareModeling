@@ -2,8 +2,7 @@
 #include "Car/Car.h"
 
 Race::Race() {
-	// TODO - implement Race::Race
-	throw "Not yet implemented";
+
 }
 
 void Race::runRace() {
@@ -40,6 +39,7 @@ bool Race::isEuropean() {
 	throw "Not yet implemented";
 }
 
+
 void Race::runFreePractice2() {
 	// TODO - implement Race::runFreePractice2
 	throw "Not yet implemented";
@@ -49,4 +49,5 @@ void Race::runRaceWeekend(Car** c) {
 	// TODO - implement Race::runRaceWeekend
 	throw "Not yet implemented";
 }
+
 
