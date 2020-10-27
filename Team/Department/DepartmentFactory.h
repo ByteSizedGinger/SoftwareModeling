@@ -5,26 +5,26 @@
 #include "Team/Department/DepartmentOutput.h"
 #include "Team/Department/DepartmentMediator.h"
 
-
+#include <string>
 using namespace std;
 
 class DepartmentFactory {
-private:
-    DepartmentOutput *part;
-    DepartmentMediator *mediator;//a
+protected:
+    DepartmentOutput* part;
+    DepartmentMediator* mediator;
 
 public:
-    DepartmentFactory(DepartmentMediator *mediator);
+    DepartmentFactory(DepartmentMediator* mediator);
 
     ~DepartmentFactory();
 
-    virtual Car *createPart() = 0;
+    virtual Car* createPart(Car* car) = 0;
 
     virtual void simulation() = 0;
 
-    virtual void otherPartChanged(Car *car) = 0;
+    virtual void otherPartChanged(DepartmentOutput* part) = 0;
 
-
+    virtual string getType() = 0;
 };
 
 #endif

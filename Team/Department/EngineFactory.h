@@ -2,22 +2,28 @@
 #define ENGINEFACTORY_H
 
 #include "Car/Car.h"
+#include "Team/Department/DepartmentFactory.h"
+#include "Team/Department/Engine.h"
 
+#include <string>
 using namespace std;
 
-class EngineFactory {
+class EngineFactory : public DepartmentFactory{
 private:
     int windTokens;
 
 public:
+    EngineFactory(DepartmentMediator* mediator);
 
-    Car *createPart();
+    ~EngineFactory();
+
+    Car* createPart(Car* car);
 
     void simulation();
 
-    void otherPartChanged(Car *car);
+    void otherPartChanged(DepartmentOutput* part);
 
-
+    string getType();
 };
 
 #endif

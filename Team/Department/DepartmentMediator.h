@@ -3,24 +3,26 @@
 
 #include "Car/Car.h"
 #include "Team/Team.h"
+#include "Team/Department/DepartmentOutput.h"
 #include "Team/Department/DepartmentFactory.h"
 
-
+#include <string>
 using namespace std;
 
 class DepartmentMediator {
 private:
-    DepartmentFactory **departments;
-    Team *team;
+    int currentDepartment;
+    DepartmentFactory** departments;
+    Team* team;
 
 public:
-    DepartmentMediator();
+    DepartmentMediator(Team* team);
 
     ~DepartmentMediator();
 
-    void communicate(Car *car);
+    void communicate(DepartmentOutput* part);
 
-    void attachDepartment(DepartmentFactory *department);
+    void attachDepartment(DepartmentFactory* department);
 
 
 };

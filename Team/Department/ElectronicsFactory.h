@@ -2,22 +2,28 @@
 #define ELECTRONICSFACTORY_H
 
 #include "Car/Car.h"
+#include "Team/Department/DepartmentFactory.h"
+#include "Team/Department/Electronics.h"
 
+#include <string>
 using namespace std;
 
-class ElectronicsFactory {
+class ElectronicsFactory : public DepartmentFactory {
 private:
     int windTokens;
 
 public:
+    ElectronicsFactory(DepartmentMediator* mediator);
 
-    Car *createPart();
+    ~ElectronicsFactory();
+
+    Car *createPart(Car* car);
 
     void simulation();
 
-    void otherPartChanged(Car *car);
+    void otherPartChanged(DepartmentOutput* part);
 
-
+    string getType();
 };
 
 #endif

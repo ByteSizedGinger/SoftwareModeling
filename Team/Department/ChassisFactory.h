@@ -2,22 +2,28 @@
 #define CHASISFACTORY_H
 
 #include "Car/Car.h"
+#include "Team/Department/DepartmentFactory.h"
+#include "Team/Department/Chassis.h"
 
+#include <string>
 using namespace std;
 
-class ChasisFactory {
+class ChassisFactory : public DepartmentFactory{
 private:
 
 
 public:
+    ChassisFactory(DepartmentMediator* mediator);
 
-    Car *createPart();
+    ~ChassisFactory();
+
+    Car* createPart(Car* car);
 
     void simulation();
 
-    void otherPartChanged(Car *car);
+    void otherPartChanged(DepartmentOutput* part);
 
-
+    string getType();
 };
 
 #endif
