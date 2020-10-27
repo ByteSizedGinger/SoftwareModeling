@@ -11,7 +11,7 @@ using namespace std;
 class DepartmentFactory {
 private:
     DepartmentOutput *part;
-    DepartmentMediator *mediator;
+    DepartmentMediator *mediator;//a
 
 public:
     DepartmentFactory(DepartmentMediator *mediator);
