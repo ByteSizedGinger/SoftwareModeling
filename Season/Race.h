@@ -9,24 +9,28 @@ using namespace std;
 class Race {
 
 private:
-	int laps;
-	bool european;
-	int date;
-	string name;
-	Car** cars;
+    int laps;
+    bool european;
+    int date;
+    string name;
+    Car **cars;
+    int numCars;
+    int averageLapTime;
 
 public:
-	Race();
+    Race(int l, bool euro, int d, string n, int avgL);
 
-	void runRace();
+    void setCars(Car **c, int num);
 
-	void printLeaderBoard();
+    void runRace();
 
-	void runQualifying();
+    void printLeaderBoard();
 
-	void runFreePractice1();
+    void runQualifying();
 
-	void pitStop();
+    void runFreePractice1();
+
+    void pitStop();
 
 	int getDate();
 
