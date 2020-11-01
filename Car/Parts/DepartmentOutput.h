@@ -9,16 +9,17 @@ using namespace std;
 class DepartmentOutput: public Car {
 	protected:
 		int speed;
-		Car* car;
 		string type;
+		Car* next;
 	public:
 		DepartmentOutput();
 		virtual ~DepartmentOutput();
-		int calculateSpeed();
+		double calculateSpeed();
 		void addPart(Car* part);
-		void removePart(string part);
-		string getType();
-		Car* getNext();
+		virtual void removePart(string part);
+		string getType(){return type;}
+		Car* getNext(){return next;}
+		virtual double getSpeed();
 		DepartmentOutput* clone();
 };
 

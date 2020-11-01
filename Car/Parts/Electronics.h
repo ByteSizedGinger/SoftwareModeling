@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Electronics: public DepartmentOutput {
+class Electronics : public DepartmentOutput {
 
 public:
     Electronics(Car* c);
