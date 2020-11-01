@@ -1,6 +1,14 @@
 #ifndef TEAM_H
 #define TEAM_H
 
+#include "Car/CurrentSeason.h"
+#include "Team/Transport/Container/Container.h"
+#include "Team/Transport/Strategy/TransportStrategy.h"
+#include "Team/Department/DepartmentFactory.h"
+#include "Team/Department/DepartmentMediator.h"
+#include "Team/TeamPoints.h"
+#include "Car/NextSeason.h"
+
 class Team {
 
 	private:
@@ -25,6 +33,7 @@ class Team {
 		string getName();
 		void partChanged();
 		void updatePoints();
+		void upgrade();
 };
 
 #endif
