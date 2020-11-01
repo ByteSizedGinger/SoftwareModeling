@@ -8,27 +8,19 @@ using namespace std;
 
 class CurrentSeason: public Car {
 	private:
-    int raceTime;
-    Queue<Tyre *> tyres;
-    Driver *driver;
-public:
-    CurrentSeason();
-
-    void addPoints(int p);
-
-    void simulate();
-
-    int getPoints();
-
-    int calculateSpeed();
-
-    CurrentSeason *clone();
-
-    string getDriverName();
-
-    void addRaceTime();
-
-    void clearRaceTime();
+		int raceTime;
+		Queue<Tyre*> tyres;
+		Driver* driver;
+	public:
+		CurrentSeason(string name);
+		void addPoints(int p);
+		void simulate();
+		int getPoints();
+		void calculateSpeed();
+		void setRaceTime(int rt){raceTime = rt;}		// raceTime = param
+		void incrementRaceTime(int rt){raceTime += rt;}	// raceTime += param
+		CurrentSeason* clone();
+		~CurrentSeason();
 };
 
 #endif
