@@ -3,30 +3,28 @@
 
 class Team {
 
-private:
-	CurrentSeason** currentCars;
-	int constructorPoints;
-	Container* container;
-	TransportStrategy* transportStrategy;
-	Department** departments;
-	int name;
+	private:
+		CurrentSeason** currentCars;
+		Container* container;
+		TransportStrategy* transportStrategy;
+		DepartmentFactory** departments;
+		int name;
+		DepartmentMediator* mediator;
+		TeamPoints* constructorPoints;
+		NextSeason* nextSeasonCar;
 
-public:
-	Team();
-
-	Team(int string_name);
-
-	void transport();
-
-	void orderTyres();
-
-	currentSeason** getCurrentSeasonCars();
-
-	void setEuropeanStrategy();
-
-	void setNonEuropeanStrategy();
-
-	string getName();
+	public:
+		Team();
+		Team(int string_name);
+		~Team();
+		void transport();
+		void orderTyres();
+		CurrentSeason** getCurrentSeasonCars();
+		void setEuropeanStrategy();
+		void setNonEuropeanStrategy();
+		string getName();
+		void partChanged();
+		void updatePoints();
 };
 
 #endif

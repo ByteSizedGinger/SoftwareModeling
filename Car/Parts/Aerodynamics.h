@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Aerodynamics {
+class Aerodynamics: public DepartmentOutput {
 
 public:
     Aerodynamics(Car* c);
