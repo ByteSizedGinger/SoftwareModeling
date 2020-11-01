@@ -2,11 +2,11 @@
 #define TRUCK_H
 
 #include <string>
-#include "Team/Transport/Container/Container.h"
+#include "Team/Transport/Strategy/TransportStrategy.h"
 
 using namespace std;
 
-class Truck {
+class Truck : public TransportStrategy {
 
 public:
     Truck();
