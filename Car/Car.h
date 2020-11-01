@@ -5,12 +5,17 @@ using namespace std;
 
 class Car {
 	private:
-		int averageSpeed;
+		double averageSpeed;
 	public:
 		Car();
-		void addPart(Car* part);
-		int calculateSpeed();
+		void addPart(Car* part) = 0;
+		void calculateSpeed() = 0;
 		Car* clone();
+		void addPoints(int p) = 0;
+		void simulate() = 0;
+		int getPoints() = 0;
+		void setRaceTime(int) = 0;		// raceTime = param
+		void incrementRaceTime(int) = 0;	//raceTime += param
 };
 
 #endif
