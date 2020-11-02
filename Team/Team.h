@@ -22,8 +22,12 @@ class Team {
 		NextSeason* nextSeasonCar;
 
 	public:
-		Team();
-		Team(int string_name);
+//Michael will debug transport and strategy
+//Caleb will debug parts and upgrading them
+//Jenna will debug tyres points drivers
+    Team();
+
+    Team(int string_name);
 		~Team();
 		void transport();
 		void orderTyres();

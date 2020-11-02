@@ -31,11 +31,17 @@ void Team::setEuropeanStrategy() {
 }
 
 void Team::setNonEuropeanStrategy() {
-	// TODO - implement Team::setNonEuropeanStrategy
-	throw "Not yet implemented";
+    // TODO - implement Team::setNonEuropeanStrategy
+    throw "Not yet implemented";
 }
 
 string Team::getName() {
-	// TODO - implement Team::getName
-	throw "Not yet implemented";
+    // TODO - implement Team::getName
+    throw "Not yet implemented";
+}
+
+void Team::upgrade() {
+    //Genrate random number 1-4 to determine which factory must create and test new part
+
+
 }

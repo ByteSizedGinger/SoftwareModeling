@@ -1,6 +1,6 @@
 #include "Season/Race.h"
 #include "Car/Car.h"
-#include <cstlib>
+#include <cstdlib>
 
 Race::Race(int l, bool euro, int d, string n, int avgL) {
     european = euro;
@@ -59,8 +59,7 @@ void Race::runFreePractice1() {
 }
 
 void Race::pitStop() {
-	// TODO - implement Race::pitStop
-	throw "Not yet implemented";
+
 }
 
 int Race::getDate() {

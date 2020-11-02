@@ -12,16 +12,27 @@ private:
 	Race** races;
 
 public:
-	Season();
-	~Season();
-	void displayConstructorsStandings();
-	void runRace();
-	void runSeason();
-	void orderTyres();
-	void displayDriversStandings();
-	Car** getCars();
-	void transport();
-	RaceIterator* createIterator();
+    Season();
+
+    ~Season();
+
+    void displayConstructorsStandings();
+
+    void runRace();
+
+    void runSeason();
+
+    void orderTyres();
+
+    void displayDriversStandings();
+
+    Car **getCars();
+
+    void transport();
+
+    RaceIterator *createIterator();
+
+    void upgradeTeamCars();
 };
 
 #endif

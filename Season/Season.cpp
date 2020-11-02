@@ -37,3 +37,7 @@ void displayDriversStandings() {
 RaceIterator* createIterator() {
 	
 }
+
+void Season::upgradeTeamCars() {
+    //Call various teams to upgrade cars
+}
