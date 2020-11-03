@@ -7,42 +7,98 @@ Team::Team(int string_name, string driver1Name, string driver2Name) {
     currentCars[0]->addPart(new Engine());
     currentCars[0]->addPart(new Chassis());
     currentCars[0]->addPart(new CurrentSeason());
+    currentCars[1] = currentCars[0]->clone();
     //currentCars[1] = new CurrentSeason(driver2Name);
-    nextSeasonCar =
+    nextSeasonCar = new Aerodynamics();
+
 }
 
 void Team::transport() {
-	// TODO - implement Team::transport
-	throw "Not yet implemented";
+    transportStrategy->transport(container);
 }
 
 void Team::orderTyres() {
-	// TODO - implement Team::orderTyres
-	throw "Not yet implemented";
+
 }
 
-CurrentSeason** Team::getCurrentSeasonCars() {
-	// TODO - implement Team::getCurrentSeasonCars
-	throw "Not yet implemented";
+Car **Team::getCurrentSeasonCars() {
+    return currentCars;
 }
 
 void Team::setEuropeanStrategy() {
-	// TODO - implement Team::setEuropeanStrategy
-	throw "Not yet implemented";
+    if (transportStrategy != null) {
+        delete transportStrategy;
+    }
+
+    transportStrategy = new Truck();
 }
 
 void Team::setNonEuropeanStrategy() {
-    // TODO - implement Team::setNonEuropeanStrategy
-    throw "Not yet implemented";
+    if (transportStrategy != null) {
+        delete transportStrategy;
+    }
+
+    transportStrategy = new Ship();
 }
 
 string Team::getName() {
-    // TODO - implement Team::getName
-    throw "Not yet implemented";
+    return name;
 }
 
 void Team::upgrade() {
-    //Genrate random number 1-4 to determine which factory must create and test new part
+    cout << "Upgrading car" << endl;
+    int u = rand() % 4 + 1;
+    if (u == 1) {
+        departments[0]->createPart();
+    } else if (u == 2) {
+        departments[1]->createPart();
+    } else if (u == 3) {
+        departments[2]->createPart();
+    } else {
+        departments[3]->createPart();
+    }
 
 
 }
+
+int Team::getConstructorPoints() {
+    return constructorPoints;
+}
+
+void Team::updatePoints() {
+    constructorPoints = currentCars[0]->getPoints() + currentCars[1]->getPoints();
+}
+
+Team::~Team() {
+    if (transportStrategy != null) {
+        delete transportStrategy;
+    }
+
+    for (int i = 0; i < 4; i++) {
+        if (departments[i] != null) {
+            delete departments[i];
+        }
+    }
+    delete departments;
+
+    if (mediator != null) {
+        delete mediator;
+    }
+    if (nextSeasonCar != null) {
+        delete nextSeasonCar;
+    }
+
+    for (int i = 0; i < 2; i++) {
+        if (currentCars[i] != null) {
+            delete currentCars[i];
+        }
+    }
+
+    if (container != null) {
+        delete container;
+    }
+
+}
+
+
+

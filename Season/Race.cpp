@@ -13,7 +13,7 @@ Race::Race(int l, bool euro, int d, string n, int avgL) {
 
 void Race::runRace() {
     for (int i = 0; i < numCars; i++) {
-        cars[i]->clearRaceTime();
+        cars[i]->setRaceTime(0);
     }
     cout << "Starting race: " << name;
     for (int i = 0; i < laps; i++) {
@@ -39,7 +39,7 @@ void Race::printLeaderBoard() {
 void Race::runQualifying() {
     cout << "Starting Qualifying: " << name;
     for (int i = 0; i < numCars; i++) {
-        cars[i]->clearRaceTime();
+        cars[i]->setRaceTime(0);
     }
 
     for (int i = 0; i < 2; i++) {
@@ -57,7 +57,7 @@ void Race::runFreePractice1() {
     cout << "Starting free Practice 1: " << name;
     cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
     for (int i = 0; i < numCars; i++) {
-        cars[i]->clearRaceTime();
+        cars[i]->setRaceTime(0);
     }
 
     for (int j = 0; j < numCars; ++j) {
@@ -89,7 +89,7 @@ void Race::runFreePractice2() {
     cout << "Starting free Practice 2: " << name;
     cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
     for (int i = 0; i < numCars; i++) {
-        cars[i]->clearRaceTime();
+        cars[i]->setRaceTime(0);
     }
 
     for (int j = 0; j < numCars; ++j) {
@@ -107,7 +107,7 @@ void Race::runRaceWeekend(Car **c, int num) {
     cars = c;
 
     for (int i = 0; i < numCars; i++) {
-        cars[i]->clearRaceTime();
+        cars[i]->setRaceTime(0);
     }
     cout << "Race weekend for race:" << name << " is starting" << endl;
     runFreePractice1();

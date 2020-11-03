@@ -8,17 +8,17 @@ ElectronicsFactory::~ElectronicsFactory(){
 
 }
     
-Car* ElectronicsFactory::createPart(Car* car){
-    if(part){
+Car *ElectronicsFactory::createPart() {
+    if (part) {
         delete part;
     }
 
     //create new part
-    part = new Electronics(car);
+    part = new Electronics();
 
     //determine if the part could be better
     //give 20% chance for part to be better,  part is not better iff (speed <= 0)
-    if(part->calculateSpeed() > 0){
+    if (part->calculateSpeed() > 0) {
         car->removePart("Electronics");
         car->addPart(part);
 

@@ -8,17 +8,17 @@ ChassisFactory::~ChassisFactory(){
 
 }
     
-Car* ChassisFactory::createPart(Car* car){
-    if(part){
+Car *ChassisFactory::createPart() {
+    if (part) {
         delete part;
     }
 
     //create new part
-    part = new Chassis(car);
+    part = new Chassis();
 
     //determine if the part could be better
     //give 20% chance for part to be better,  part is not better iff (speed <= 0)
-    if(part->calculateSpeed() > 0){
+    if (part->calculateSpeed() > 0) {
         car->removePart("Chassis");
         car->addPart(part);
 

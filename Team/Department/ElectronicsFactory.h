@@ -17,7 +17,7 @@ public:
 
     ~ElectronicsFactory();
 
-    Car *createPart(Car* car);
+    Car *createPart();
 
     void simulation();
 

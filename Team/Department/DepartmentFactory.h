@@ -18,7 +18,7 @@ public:
 
     ~DepartmentFactory();
 
-    virtual Car* createPart(Car* car) = 0;
+    virtual Car *createPart() = 0;
 
     virtual void simulation() = 0;
 

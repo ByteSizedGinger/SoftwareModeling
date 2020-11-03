@@ -18,7 +18,7 @@ private:
     DepartmentFactory **departments;
     int name;
     DepartmentMediator *mediator;
-    TeamPoints *constructorPoints;
+    int constructorPoints;
     Car *nextSeasonCar;
 
 public:
@@ -33,13 +33,22 @@ public:
 
     void orderTyres();
 
-    CurrentSeason **getCurrentSeasonCars();
-		void setEuropeanStrategy();
-		void setNonEuropeanStrategy();
-		string getName();
-		void partChanged();
-		void updatePoints();
-		void upgrade();
+    Car **getCurrentSeasonCars();
+
+    void setEuropeanStrategy();
+
+    void setNonEuropeanStrategy();
+
+    string getName();
+
+    void partChanged();
+
+    void updatePoints();
+
+    void upgrade();
+
+    int getConstructorPoints();
+
 };
 
 #endif

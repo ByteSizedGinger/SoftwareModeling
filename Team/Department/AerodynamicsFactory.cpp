@@ -8,17 +8,17 @@ AerodynamicsFactory::~AerodynamicsFactory(){
 
 }
 
-Car* AerodynamicsFactory::createPart(Car* car){
-    if(part){
+Car *AerodynamicsFactory::createPart() {
+    if (part) {
         delete part;
     }
 
     //create new part
-    part = new Aerodynamics(car);
+    part = new Aerodynamics();
 
     //determine if the part could be better
     //give 20% chance for part to be better,  part is not better iff (speed <= 0) -> no need to test in the windTunnel
-    if(part->calculateSpeed() > 0){
+    if (part->calculateSpeed() > 0) {
         //we know the part is better in theory, but is it better in practice -> use wind tunnel
         int windPerformance = windTunnel();
 
