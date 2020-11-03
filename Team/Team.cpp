@@ -1,13 +1,11 @@
 #include "Team.h"
 
-Team::Team() {
-	// TODO - implement Team::Team
-	throw "Not yet implemented";
-}
-
-Team::Team(int string_name) {
-	// TODO - implement Team::Team
-	throw "Not yet implemented";
+Team::Team(int string_name, string driver1Name, string driver2Name) {
+    name = string_name;
+    currentCars[0] = new CurrentSeason(driver1Name);
+    currentCars[0] = currentCars[0]->addPart(new Aeorodynamics());
+    //currentCars[1] = new CurrentSeason(driver2Name);
+    nextSeasonCar =
 }
 
 void Team::transport() {

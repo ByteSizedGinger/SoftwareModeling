@@ -11,27 +11,29 @@
 
 class Team {
 
-	private:
-		CurrentSeason** currentCars;
-		Container* container;
-		TransportStrategy* transportStrategy;
-		DepartmentFactory** departments;
-		int name;
-		DepartmentMediator* mediator;
-		TeamPoints* constructorPoints;
-		NextSeason* nextSeasonCar;
+private:
+    Car **currentCars;
+    Container *container;
+    TransportStrategy *transportStrategy;
+    DepartmentFactory **departments;
+    int name;
+    DepartmentMediator *mediator;
+    TeamPoints *constructorPoints;
+    Car *nextSeasonCar;
 
-	public:
+public:
 //Michael will debug transport and strategy
 //Caleb will debug parts and upgrading them
 //Jenna will debug tyres points drivers
-    Team();
+    Team(int string_name, string driver1Name, string driver2Name);
 
-    Team(int string_name);
-		~Team();
-		void transport();
-		void orderTyres();
-		CurrentSeason** getCurrentSeasonCars();
+    ~Team();
+
+    void transport();
+
+    void orderTyres();
+
+    CurrentSeason **getCurrentSeasonCars();
 		void setEuropeanStrategy();
 		void setNonEuropeanStrategy();
 		string getName();
