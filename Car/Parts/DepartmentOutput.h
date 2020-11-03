@@ -20,7 +20,7 @@ class DepartmentOutput: public Car {
 		string getType(){return type;}
 		Car* getNext(){return next;}
 		virtual double getSpeed();
-		DepartmentOutput* clone();
+		Car* clone();
 		virtual void setRaceTime(int rt);
 		virtual void incrementRaceTime(int rt);
 		virtual int getRaceTime();
