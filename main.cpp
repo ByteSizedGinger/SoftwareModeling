@@ -1,11 +1,11 @@
-#include "Team/Team.h"
-#include "Season/Race.h"
 #include "Season/Season.h"
 
 int main() {
 
+	Season season = Season::instance();//(teams, 10, races, 21);
+
 	Team** teams = new Team*[10];
-	teams[0] = new Team("Mercedes", "Lewis Hamilton", "Valtteri Bottas");
+	season->addTeam("Mercedes", "Lewis Hamilton", "Valtteri Bottas");
 	teams[1] = new Team("Red Bull", "Max Verstappen", "Alex Albon");
 	teams[2] = new Team("Renault", "Daniel Ricciardo", "Esteban Ocon");
 	teams[3] = new Team("McLaren", "Carlos Sainz", "Lando Norris");
@@ -40,16 +40,9 @@ int main() {
 	races[19] = new Race(67, false, 200, "Australian Grand Prix", 90);
 	races[20] = new Race(67, false, 210, "Australian Grand Prix", 90);
 	
-	Season season(teams, 10, races, 21);
+	
 
-	for (int i = 0; i < 10, i++) {
-		delete teams[i];
-	}
-	delete[] teams;
-	for (int i = 0; i < 21, i++) {
-		delete races[i];
-	}
-	delete[] races;
+	delete season;
 
 	return 0;
 }

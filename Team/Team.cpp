@@ -2,8 +2,11 @@
 
 Team::Team(int string_name, string driver1Name, string driver2Name) {
     name = string_name;
-    currentCars[0] = new CurrentSeason(driver1Name);
-    currentCars[0] = currentCars[0]->addPart(new Aeorodynamics());
+    currentCars[0] = new Aerodynamics();
+    currentCars[0]->addPart(new Electronics());
+    currentCars[0]->addPart(new Engine());
+    currentCars[0]->addPart(new Chassis());
+    currentCars[0]->addPart(new CurrentSeason());
     //currentCars[1] = new CurrentSeason(driver2Name);
     nextSeasonCar =
 }

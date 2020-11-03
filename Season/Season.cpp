@@ -1,15 +1,31 @@
 #include "Season/Season.h"
 
-Season::Season() {
-	
-}
+Season::Season() {}
 
 Season::~Season() {
-	
+	for (int i = 0; i < 10, i++) {
+		delete teams[i];
+	}
+	delete[] teams;
+	for (int i = 0; i < 21, i++) {
+		delete races[i];
+	}
+	delete[] races;
 }
 
-Season* Season::instance() {
-	return singleton;
+Season Season::instance() {
+	if (singleton == NULL) {
+		singleton = new Season();
+	}
+	return *(singleton);
+}
+
+void Season::addTeam(Team* team) {
+	teams.push(team);
+}
+
+void Season::addRace(Race* race) {
+	races.push(race);
 }
 
 void Season::runSeason() {
