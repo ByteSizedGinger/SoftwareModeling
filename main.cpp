@@ -4,45 +4,39 @@ int main() {
 
 	Season season = Season::instance();//(teams, 10, races, 21);
 
-	Team** teams = new Team*[10];
 	season->addTeam("Mercedes", "Lewis Hamilton", "Valtteri Bottas");
-	teams[1] = new Team("Red Bull", "Max Verstappen", "Alex Albon");
-	teams[2] = new Team("Renault", "Daniel Ricciardo", "Esteban Ocon");
-	teams[3] = new Team("McLaren", "Carlos Sainz", "Lando Norris");
-	teams[4] = new Team("Racing Point", "Sergio Perez", "Lance Stroll");
-	teams[5] = new Team("Ferrari", "Charles Leclerc", "Sebastian Vettel");
-	teams[6] = new Team("AlphaTauri", "Pierre Gasly", "Daniil Kvyat");
-	teams[7] = new Team("Alfa Romeo", "Kimi Raikkonen", "Antonio Giovinazzi");
-	teams[8] = new Team("Haas", "Romain Grosjean", "Kevin Magnussen");
-	teams[9] = new Team("Williams", "George Russell", "Nicolas Latifi");
+	season->addTeam("Red Bull", "Max Verstappen", "Alex Albon");
+	season->addTeam("Renault", "Daniel Ricciardo", "Esteban Ocon");
+	season->addTeam("McLaren", "Carlos Sainz", "Lando Norris");
+	season->addTeam("Racing Point", "Sergio Perez", "Lance Stroll");
+	season->addTeam("Ferrari", "Charles Leclerc", "Sebastian Vettel");
+	season->addTeam("AlphaTauri", "Pierre Gasly", "Daniil Kvyat");
+	season->addTeam("Alfa Romeo", "Kimi Raikkonen", "Antonio Giovinazzi");
+	season->addTeam("Haas", "Romain Grosjean", "Kevin Magnussen");
+	season->addTeam("Williams", "George Russell", "Nicholas Latifi");
 
-	Race** races = new Race*[21];
 	// length, european, date, name, avg lap time
-	races[0] = new Race(67, false, 10, "Australian Grand Prix", 90);
-	races[1] = new Race(67, false, 20, "Australian Grand Prix", 90);
-	races[2] = new Race(67, false, 30, "Australian Grand Prix", 90);
-	races[3] = new Race(67, false, 40, "Australian Grand Prix", 90);
-	races[4] = new Race(67, false, 50, "Australian Grand Prix", 90);
-	races[5] = new Race(67, false, 60, "Australian Grand Prix", 90);
-	races[6] = new Race(67, false, 70, "Australian Grand Prix", 90);
-	races[7] = new Race(67, false, 80, "Australian Grand Prix", 90);
-	races[8] = new Race(67, false, 90, "Australian Grand Prix", 90);
-	races[9] = new Race(67, false, 100, "Australian Grand Prix", 90);
-	races[10] = new Race(67, false, 110, "Australian Grand Prix", 90);
-	races[11] = new Race(67, false, 120, "Australian Grand Prix", 90);
-	races[12] = new Race(67, false, 130, "Australian Grand Prix", 90);
-	races[13] = new Race(67, false, 140, "Australian Grand Prix", 90);
-	races[14] = new Race(67, false, 150, "Australian Grand Prix", 90);
-	races[15] = new Race(67, false, 160, "Australian Grand Prix", 90);
-	races[16] = new Race(67, false, 170, "Australian Grand Prix", 90);
-	races[17] = new Race(67, false, 180, "Australian Grand Prix", 90);
-	races[18] = new Race(67, false, 190, "Australian Grand Prix", 90);
-	races[19] = new Race(67, false, 200, "Australian Grand Prix", 90);
-	races[20] = new Race(67, false, 210, "Australian Grand Prix", 90);
-	
-	
-
-	delete season;
+	season->addRace(67, false, 10, "Australian Grand Prix", 90);
+	season->addRace(67, false, 20, "Australian Grand Prix", 90);
+	season->addRace(67, false, 30, "Australian Grand Prix", 90);
+	season->addRace(67, false, 40, "Australian Grand Prix", 90);
+	season->addRace(67, false, 50, "Australian Grand Prix", 90);
+	season->addRace(67, false, 60, "Australian Grand Prix", 90);
+	season->addRace(67, false, 70, "Australian Grand Prix", 90);
+	season->addRace(67, false, 80, "Australian Grand Prix", 90);
+	season->addRace(67, false, 90, "Australian Grand Prix", 90);
+	season->addRace(67, false, 100, "Australian Grand Prix", 90);
+	season->addRace(67, false, 110, "Australian Grand Prix", 90);
+	season->addRace(67, false, 120, "Australian Grand Prix", 90);
+	season->addRace(67, false, 130, "Australian Grand Prix", 90);
+	season->addRace(67, false, 140, "Australian Grand Prix", 90);
+	season->addRace(67, false, 150, "Australian Grand Prix", 90);
+	season->addRace(67, false, 160, "Australian Grand Prix", 90);
+	season->addRace(67, false, 170, "Australian Grand Prix", 90);
+	season->addRace(67, false, 180, "Australian Grand Prix", 90);
+	season->addRace(67, false, 190, "Australian Grand Prix", 90);
+	season->addRace(67, false, 200, "Australian Grand Prix", 90);
+	season->addRace(67, false, 210, "Australian Grand Prix", 90);
 
 	return 0;
 }

@@ -11,24 +11,25 @@ class Season {
 
 	private:
 		static Season* singleton;
-		list<Team*> teams;
-		list<Race**> races;
+		Team** teams;
+		int numTeams;
+		Race** races;
+		int numRaces;
 		Season();
 		~Season();
+		void orderTyres();
+		Car **getCars();
+		void displayConstructorsStandings();
+		void displayDriversStandings();
+		void transport(bool european);
+		RaceIterator *createIterator();
+		void upgradeTeamCars();
 
 	public:
 		static Season instance();
 		void addTeam(Team* team);
 		void addRace(Race* race);
-		void displayConstructorsStandings();
-		void runRace();
 		void runSeason();
-		void orderTyres();
-		void displayDriversStandings();
-		Car **getCars();
-		void transport();
-		RaceIterator *createIterator();
-		void upgradeTeamCars();
 };
 
 #endif

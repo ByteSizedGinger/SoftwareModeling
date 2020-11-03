@@ -20,33 +20,71 @@ Season Season::instance() {
 	return *(singleton);
 }
 
-void Season::addTeam(Team* team) {
-	teams.push(team);
+void Season::addTeam() {
+	Team** newList = new Team*[numTeams+1];
+	for (int i = 0; i < numTeams; i++) {
+		newList[i] = teams[i];
+	}
+	newList[numTeams] = new Team(teamName, driver1, driver2);
+	delete[] teams;
+	teams = newList;
+	numTeams++;
 }
 
 void Season::addRace(Race* race) {
-	races.push(race);
+	Race** newList = new Race*[numRaces+1];
+	for (int i = 0; i < numRaces; i++) {
+		newList[i] = races[i];
+	}
+	newList[numRaces] = race;
+	delete[] races;
+	races = newList;
+	numRaces++;
 }
 
 void Season::runSeason() {
-	for (int i = 0; i < 365; i++) {
+	int upgradesBlockedUntil = 0; //cannot do upgrades if we are before this date
+	for (int date = 1; date <= 365; date++) {
+		RaceIterator* it = createIterator();
+		for (it->first(); !it->isDone(); it->next()) {
+			Race* race = it->currentItem();
 
+			if (!race->isEuropean() && race->getDate()-90 == date) {
+				transport(false);
+			} else if (race->isEuropean() && race->getDate()-7 == date) {
+				transport(true);
+			}
+			
+			if (race->getDate()-30 == date) {
+				orderTyres();
+			}
+
+			if (race->getDate() == date) {
+				race->runRaceWeekend(getCars(), numTeams*2);
+				upgradesBlockedUntil = date+2;
+				//cannot do upgrades today (date+0), tomorrow (date+1) or the next day (date+2).
+				//can do upgrades the following day (date+3)
+			}
+		}
+		delete it;
+
+		if (upgradesBlockedUntil < date) {
+			upgradeTeamCars();
+		}
 	}
 }
 
 void Season::displayConstructorsStandings() {
-	// TODO - implement Season::displayConstructorsStandings
-	throw "Not yet implemented";
-}
-
-void Season::runRace() {
-	// TODO - implement Season::runRace
-	throw "Not yet implemented";
+	cout << "Constructors' Standings:" << endl;
+	for (int i = 0; i < numTeams; i++) {
+		cout << (i+1) << ". " << teams[i]->getName() << ": " << teams[i]->getConstructorPoints() << endl;
+	}
 }
 
 void Season::orderTyres() {
-	// TODO - implement Season::orderTyres
-	throw "Not yet implemented";
+	for (int i = 0; i < numTeams; i++) {
+		teams[i]->orderTyres();
+	}
 }
 
 Car** Season::getCars() {
@@ -58,19 +96,31 @@ Car** Season::getCars() {
 	return cars;
 }
 
-void Season::transport() {
-	// TODO - implement Season::transport
-	throw "Not yet implemented";
+void Season::transport(bool european) {
+	for (int i = 0; i < numTeams; i++) {
+		if (european) {
+			teams[i]->setEuropeanStrategy();
+		} else {
+			teams[i]->setNonEuropeanStrategy();
+		}
+		teams[i]->transport();
+	}
 }
 
 void displayDriversStandings() {
-
+	Car** cars = getCars();
+	cout << "Drivers' Standings:" << endl;
+	for (int i = 0; i < numTeams*2; i++) {
+		cout << (i+1) << ". " << cars[i]->getDriver()->getName() << ": " << cars[i]->getPoints() << endl;
+	}
 }
 
 RaceIterator* createIterator() {
-	
+	return new RaceIterator(races, numRaces);
 }
 
 void Season::upgradeTeamCars() {
-    //Call various teams to upgrade cars
+	for (int i = 0; i < numTeams; i++) {
+		teams[i]->upgrade();
+	}
 }
