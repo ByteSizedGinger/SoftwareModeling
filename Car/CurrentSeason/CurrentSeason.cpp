@@ -20,7 +20,7 @@ void CurrentSeason::simulate(){	// each call of this function has on average 10%
 		int i = (rand()%10 +1);
 		switch(i){
 			case 1: driver->setPerformance(driver->getPerformance()+1);
-			default: return;
+			default: break;
 		}
 	}
 }
