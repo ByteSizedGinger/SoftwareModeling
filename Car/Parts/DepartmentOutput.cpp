@@ -36,6 +36,10 @@ double DepartmentOutput::calculateSpeed(){
 	return averageSpeed;
 }
 
+Car* DepartmentOutput::clone() {
+
+}
+
 DepartmentOutput::~DepartmentOutput(){
 	delete this->next;
 }
