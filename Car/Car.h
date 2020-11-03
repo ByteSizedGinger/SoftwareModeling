@@ -19,7 +19,7 @@ public:
 
     void calculateSpeed() = 0;
 
-    Car *clone();
+    virtual Car* clone() = 0;
 
     void simulate() = 0;
 
