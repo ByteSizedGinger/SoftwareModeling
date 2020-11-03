@@ -1,5 +1,0 @@
-#include "NextSeason.h"
-
-NextSeason(){
-	
-}

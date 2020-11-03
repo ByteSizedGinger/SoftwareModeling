@@ -18,8 +18,9 @@ class CurrentSeason: public Car {
 		void simulate();
 		int getPoints();
 		void calculateSpeed();
-		void setRaceTime(int rt){raceTime = rt;}		// raceTime = param
-		void incrementRaceTime(int rt){raceTime += rt;}		// raceTime += param
+		virtual void setRaceTime(int rt){raceTime = rt;}		// raceTime = param
+		virtual void incrementRaceTime(int rt){raceTime += rt;}		// raceTime += param
+		virtual int getRaceTime(){return RaceTime;}
 		void setDriver(Driver* d){driver = d;}
 		Car* clone();
 		~CurrentSeason();

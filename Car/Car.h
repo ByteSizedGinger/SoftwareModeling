@@ -15,16 +15,17 @@ public:
 
     void addPoints(int p);
 
-    void addPart(Car *part) = 0;
+    virtual void addPart(Car *part) = 0;
 
-    void calculateSpeed() = 0;
+    virtual void calculateSpeed() = 0;
 
     virtual Car* clone() = 0;
 
-    void simulate() = 0;
+    virtual void simulate() = 0;
 
-    void setRaceTime(int) = 0;        // raceTime = param
-    void incrementRaceTime(int) = 0;    //raceTime += param
+    virtual void setRaceTime(int) = 0;        // raceTime = param
+    virtual void incrementRaceTime(int) = 0;    //raceTime += param
+    virtual int getRaceTime() = 0;
 };
 
 #endif
