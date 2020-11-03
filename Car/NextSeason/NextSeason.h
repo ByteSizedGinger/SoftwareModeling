@@ -8,7 +8,7 @@ using namespace std;
 class NextSeason: public Car {
 	public:
 		NextSeason();
-		NextSeason* clone();
+		Car* clone();
 };
 
 #endif
