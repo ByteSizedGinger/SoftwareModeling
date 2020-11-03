@@ -21,6 +21,10 @@ class DepartmentOutput: public Car {
 		Car* getNext(){return next;}
 		virtual double getSpeed();
 		DepartmentOutput* clone();
+		virtual void setRaceTime(int rt);
+		virtual void incrementRaceTime(int rt);
+		virtual int getRaceTime();
+		void setDriver(Driver* d);
 };
 
 #endif

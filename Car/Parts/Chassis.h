@@ -9,7 +9,7 @@ using namespace std;
 class Chasis : public DepartmentOutput {
 
 public:
-    Chasis(Car* c);
+    Chasis();
 
 };
 

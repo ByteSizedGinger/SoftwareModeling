@@ -9,7 +9,7 @@ using namespace std;
 class Electronics : public DepartmentOutput {
 
 public:
-    Electronics(Car* c);
+    Electronics();
 
 };
 
