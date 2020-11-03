@@ -13,6 +13,7 @@ private:
 
 public:
 	Driver(string);
+	string getDriver() { return name; }
 	int getPerformance(){ return performance;}
 	void setPerformance(int p){ performance = p;}
 	int getPoints(){return points;}
