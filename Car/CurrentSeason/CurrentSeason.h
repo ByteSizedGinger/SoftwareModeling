@@ -12,6 +12,7 @@ class CurrentSeason: public Car {
 		Queue<Tyre*> tyres;
 		Driver* driver;
 	public:
+		CurrentSeason(Driver* d) { raceTime = 0; driver = d; }
 		CurrentSeason(string name);
 		void addPoints(int p);
 		void simulate();
@@ -20,7 +21,7 @@ class CurrentSeason: public Car {
 		void setRaceTime(int rt){raceTime = rt;}		// raceTime = param
 		void incrementRaceTime(int rt){raceTime += rt;}		// raceTime += param
 		void setDriver(Driver* d){driver = d;}
-		CurrentSeason* clone();
+		Car* clone();
 		~CurrentSeason();
 };
 
