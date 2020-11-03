@@ -9,7 +9,7 @@ Chassis::Chassis(){
 
 void Chassis::removePart(string part){
 	if(part == this->getType()) cout << part << " has been removed." << endl;
-	DepartmentOutput::removePart(part);
+	else DepartmentOutput::removePart(part);
 }
 
 double Chassis::getSpeed(){

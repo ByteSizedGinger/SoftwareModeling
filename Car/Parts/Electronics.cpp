@@ -9,7 +9,7 @@ Electronics::Electronics(){
 
 void Electronics::removePart(string part){
 	if(part == this->getType()) cout << part << " has been removed." << endl;
-	DepartmentOutput::removePart(part);
+	else DepartmentOutput::removePart(part);
 }
 
 double Electronics::getSpeed(){
