@@ -59,7 +59,10 @@ void Race::runFreePractice1() {
 }
 
 void Race::pitStop() {
-
+    for (int j = 0; j < numCars; ++j) {
+        int time = rand() % 20 + 25;
+        cars[j]->addRaceTime();
+    }
 }
 
 int Race::getDate() {
@@ -103,7 +106,15 @@ void setCars(Car **c, int num) {
 }
 
 void sortDrivers() {
-
+    for (int i = 0; i < numCars; i++) {
+        for (int j = i; j < numCars; j++) {
+            if (cars[i]->getRaceTime() > cars[j]->getRaceTime()) {
+                Car *temp = cars[i];
+                cars[i] = cars[j];
+                cars[j] = temp;
+            }
+        }
+    }
 }
 
 
