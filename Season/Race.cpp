@@ -22,17 +22,22 @@ void Race::runRace() {
             cars[j]->addRaceTime();
         }
     }
+    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
+    cout << "Race results:" << endl;
     printLeaderBoard();
 }
 
 void Race::printLeaderBoard() {
+    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
     sortDrivers();
     for (int i = 0; i < numCars; i++) {
         cout << i << ":" << cars[i]->getDriverName() << endl;
     }
+    out << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
 }
 
 void Race::runQualifying() {
+    cout << "Starting Qualifying: " << name;
     for (int i = 0; i < numCars; i++) {
         cars[i]->clearRaceTime();
     }
@@ -43,10 +48,14 @@ void Race::runQualifying() {
             cars[j]->addRaceTime();
         }
     }
+    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
+    cout << "Qualifying results: " << endl;
     printLeaderBoard();
 }
 
 void Race::runFreePractice1() {
+    cout << "Starting free Practice 1: " << name;
+    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
     for (int i = 0; i < numCars; i++) {
         cars[i]->clearRaceTime();
     }
@@ -55,6 +64,8 @@ void Race::runFreePractice1() {
         int time = rand() % 80 + averageLapTime;
         cars[j]->addRaceTime();
     }
+
+    cout << "Free practice 1 results: " << endl;
     printLeaderBoard();
 }
 
@@ -75,6 +86,8 @@ bool Race::isEuropean() {
 
 
 void Race::runFreePractice2() {
+    cout << "Starting free Practice 2: " << name;
+    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << end;
     for (int i = 0; i < numCars; i++) {
         cars[i]->clearRaceTime();
     }
@@ -84,10 +97,15 @@ void Race::runFreePractice2() {
         int time = rand() % 60 + averageLapTime;
         cars[j]->addRaceTime();
     }
+
+    cout << "Free practice 2 results: " << endl;
     printLeaderBoard();
 }
 
-void Race::runRaceWeekend(Car** c) {
+void Race::runRaceWeekend(Car **c, int num) {
+    numCars = num;
+    cars = c;
+
     for (int i = 0; i < numCars; i++) {
         cars[i]->clearRaceTime();
     }
@@ -100,10 +118,6 @@ void Race::runRaceWeekend(Car** c) {
 
 }
 
-void setCars(Car **c, int num) {
-    cars = c;
-    numCars = num;
-}
 
 void sortDrivers() {
     for (int i = 0; i < numCars; i++) {

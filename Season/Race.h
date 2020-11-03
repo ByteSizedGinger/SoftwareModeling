@@ -11,20 +11,13 @@ class Race {
 private:
     int laps;
     bool european;
-    int date;
+    int date;  //date of 1st day of weekend
     string name;
     Car **cars;
     int numCars;
     int averageLapTime;
 
-public:
-    Race(int l, bool euro, int d, string n, int avgL);
-
-    void setCars(Car **c, int num);
-
-    void runRace();
-
-    void printLeaderBoard();
+    void runFreePractice2();
 
     void runQualifying();
 
@@ -32,13 +25,18 @@ public:
 
     void pitStop();
 
-	int getDate();
+    void runRace();
 
-	bool isEuropean();
+public:
+    Race(int l, bool euro, int d, string n, int avgL);
 
-	void runFreePractice2();
+    void printLeaderBoard();
 
-	void runRaceWeekend(Car** c);
+    int getDate();
+
+    bool isEuropean();
+
+    void runRaceWeekend(Car **c, int num);
 };
 
 #endif
