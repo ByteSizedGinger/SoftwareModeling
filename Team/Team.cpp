@@ -18,7 +18,7 @@ void Team::transport() {
 }
 
 void Team::orderTyres() {
-
+cout << name << " ordering tyres" << endl;
 }
 
 Car **Team::getCurrentSeasonCars() {
@@ -70,31 +70,31 @@ void Team::updatePoints() {
 }
 
 Team::~Team() {
-    if (transportStrategy != null) {
+    if (transportStrategy) {
         delete transportStrategy;
     }
 
     for (int i = 0; i < 4; i++) {
-        if (departments[i] != null) {
+        if (departments[i]) {
             delete departments[i];
         }
     }
     delete departments;
 
-    if (mediator != null) {
+    if (mediator) {
         delete mediator;
     }
-    if (nextSeasonCar != null) {
+    if (nextSeasonCar) {
         delete nextSeasonCar;
     }
 
     for (int i = 0; i < 2; i++) {
-        if (currentCars[i] != null) {
+        if (currentCars[i]) {
             delete currentCars[i];
         }
     }
 
-    if (container != null) {
+    if (container) {
         delete container;
     }
 
