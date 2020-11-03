@@ -7,32 +7,24 @@
 
 class Season {
 
-private:
-	Team** teams;
-	Race** races;
+	private:
+		static Season* singleton;
+		Team** teams;
+		Race** races;
+		Season();
+		~Season();
 
-public:
-    Season();
-
-    ~Season();
-
-    void displayConstructorsStandings();
-
-    void runRace();
-
-    void runSeason();
-
-    void orderTyres();
-
-    void displayDriversStandings();
-
-    Car **getCars();
-
-    void transport();
-
-    RaceIterator *createIterator();
-
-    void upgradeTeamCars();
+	public:
+		static Season* instance();
+		void displayConstructorsStandings();
+		void runRace();
+		void runSeason();
+		void orderTyres();
+		void displayDriversStandings();
+		Car **getCars();
+		void transport();
+		RaceIterator *createIterator();
+		void upgradeTeamCars();
 };
 
 #endif
