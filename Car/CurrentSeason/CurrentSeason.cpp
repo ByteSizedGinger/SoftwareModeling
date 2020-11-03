@@ -33,7 +33,10 @@ void CurrentSeason::calculateSpeed() : Car::calculateSpeed(){	//not sure if this
 	averageSpeed = averageSpeed + driver->getPerformance()/100;
 }
 
-CurrentSeason* CurrentSeason::clone();
+Car* CurrentSeason::clone() {
+	Car* temp = new CurrentSeason(driver);
+	return temp;
+}
 
 CurrentSeason::~CurrentSeason(){
 	delete driver;
