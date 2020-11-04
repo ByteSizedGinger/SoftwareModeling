@@ -1,12 +1,12 @@
-#ifndef CHASIS_H
-#define CHASIS_H
+#ifndef CHASSIS_H
+#define CHASSIS_H
 
 #include <string>
 #include "Car/Parts/DepartmentOutput.h"
 
 using namespace std;
 
-class Chasis : public DepartmentOutput {
+class Chassis : public DepartmentOutput {
 
 public:
     Chassis();

@@ -16,14 +16,14 @@ private:
     Container *container;
     TransportStrategy *transportStrategy;
     DepartmentFactory **departments;
-    int name;
+    string name;
     DepartmentMediator *mediator;
     int constructorPoints;
     Car *nextSeasonCar;
 
 public:
 
-    Team(int string_name, string driver1Name, string driver2Name);
+    Team(string string_name, string driver1Name, string driver2Name);
 
     ~Team();
 

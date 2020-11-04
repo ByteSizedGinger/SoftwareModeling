@@ -1,15 +1,28 @@
 #include "Team.h"
+#include "Car/Parts/Aerodynamics.h"
+#include "Car/Parts/Electronics.h"
+#include "Car/Parts/Engine.h"
+#include "Car/Parts/Chassis.h"
+#include "Team/Department/AerodynamicsFactory.h"
+#include "Team/Department/ChassisFactory.h"
+#include "Team/Department/ElectronicsFactory.h"
+#include "Team/Department/EngineFactory.h"
+#include "Team/Transport/Container/Box.h"
+#include "Team/Transport/Container/Equipment.h"
+#include "Team/Transport/Strategy/Ship.h"
+#include "Team/Transport/Strategy/Truck.h"
 #include <iostream>
 
-Team::Team(int string_name, string driver1Name, string driver2Name) {
+Team::Team(string string_name, string driver1Name, string driver2Name) {
     cout << "Team " << string_name << " created" << endl;
     name = string_name;
     currentCars[0] = new Aerodynamics();
     currentCars[0]->addPart(new Electronics());
     currentCars[0]->addPart(new Engine());
     currentCars[0]->addPart(new Chassis());
-    currentCars[0]->addPart(new CurrentSeason());
+    currentCars[0]->addPart(new CurrentSeason(driver1Name));
     currentCars[1] = currentCars[0]->clone();
+    currentCars[1]->setDriver(new Driver(driver2Name));
     //currentCars[1] = new CurrentSeason(driver2Name);
     nextSeasonCar = new Aerodynamics();
     nextSeasonCar->addPart(new Electronics());
@@ -50,10 +63,11 @@ void Team::setEuropeanStrategy() {
     if (container) {
         delete container;
     }
-    container = new Box();
-    container->add(new Equipment("Garage Equipment"));
-    container->add(new Equipment("Catering Equipment"));
-    container->add(new Equipment("Other Equipment"));
+    Box* box = new Box();
+    box->add(new Equipment("Garage Equipment"));
+    box->add(new Equipment("Catering Equipment"));
+    box->add(new Equipment("Other Equipment"));
+    container = box;
     transportStrategy = new Truck();
 }
 
@@ -64,11 +78,12 @@ void Team::setNonEuropeanStrategy() {
     if (container) {
         delete container;
     }
-    container = new Box();
-    container->add(new Equipment("Garage Equipment"));
-    container->add(new Equipment("Catering Equipment"));
-    container->add(new Equipment("Extra Tools"));
-    container->add(new Equipment("Other Equipment"));
+    Box* box = new Box();
+    box->add(new Equipment("Garage Equipment"));
+    box->add(new Equipment("Catering Equipment"));
+    box->add(new Equipment("Extra Tools"));
+    box->add(new Equipment("Other Equipment"));
+    container = box;
     transportStrategy = new Ship();
 }
 

@@ -15,11 +15,6 @@ private:
     queue<Tyre *> tyres;
     Driver *driver;
 public:
-    CurrentSeason(Driver *d) {
-        raceTime = 0;
-        driver = d;
-    }
-
     CurrentSeason(string name);
 
     void addPoints(int p);
@@ -30,11 +25,11 @@ public:
 
     void calculateSpeed();
 
-    virtual void setRaceTime(int rt) { raceTime = rt; }        // raceTime = param
-    virtual void incrementRaceTime(int rt) { raceTime += rt; }        // raceTime += param
-    virtual int getRaceTime() { return raceTime; }
+    virtual void setRaceTime(int rt);
+    virtual void incrementRaceTime(int rt);
+    virtual int getRaceTime();
 
-    void setDriver(Driver *d) { driver = d; }
+    void setDriver(Driver *d);
 
     Car *clone();
 

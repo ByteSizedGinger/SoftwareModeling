@@ -3,7 +3,7 @@
 
 #include "Car/Car.h"
 #include "Team/Department/DepartmentFactory.h"
-#include "Team/Car/Parts/Electronics.h"
+#include "Car/Parts/Electronics.h"
 
 #include <string>
 using namespace std;

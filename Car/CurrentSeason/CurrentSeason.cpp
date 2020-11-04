@@ -48,3 +48,18 @@ CurrentSeason::~CurrentSeason(){
 	//delete the tyres too
 }
 
+void CurrentSeason::setRaceTime(int rt) {
+	raceTime = rt;
+}
+
+void CurrentSeason::incrementRaceTime(int rt) {
+	raceTime += rt;
+}
+
+int CurrentSeason::getRaceTime() {
+	return raceTime;
+}
+
+void CurrentSeason::setDriver(Driver *d) {
+	driver = d;
+}

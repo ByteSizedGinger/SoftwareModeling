@@ -8,27 +8,21 @@ using namespace std;
 class Car {
 private:
     double averageSpeed;
-    Driver *driver;
 
 public:
     Car();
-
-    int getPoints();
-
-    void addPoints(int p);
-
-    virtual void addPart(Car *part) = 0;
-
-    virtual void calculateSpeed() = 0;
-
+    virtual ~Car();
+    virtual int getPoints();
+    virtual void addPoints(int p);
+    virtual void addPart(Car *part);
+    virtual void calculateSpeed();
     virtual Car* clone() = 0;
-
-    virtual void simulate() = 0;
-
-    virtual void setRaceTime(int) = 0;        // raceTime = param
-    virtual void incrementRaceTime(int) = 0;    //raceTime += param
-    virtual int getRaceTime() = 0;
-    virtual string getDriverName() = 0;
+    virtual void simulate();
+    virtual void setRaceTime(int);        // raceTime = param
+    virtual void incrementRaceTime(int);    //raceTime += param
+    virtual int getRaceTime();
+    virtual string getDriverName();
+    virtual void setDriver(Driver* d);
 };
 
 #endif

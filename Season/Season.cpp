@@ -1,6 +1,5 @@
 #include "Season/Season.h"
-
-using namespace std;
+#include <iostream>
 
 Season::Season() {}
 
@@ -110,15 +109,15 @@ void Season::transport(bool european) {
 	}
 }
 
-void displayDriversStandings() {
+void Season::displayDriversStandings() {
 	Car** cars = getCars();
 	cout << "Drivers' Standings:" << endl;
 	for (int i = 0; i < numTeams*2; i++) {
-		cout << (i+1) << ". " << cars[i]->getDriver()->getName() << ": " << cars[i]->getPoints() << endl;
+		cout << (i+1) << ". " << cars[i]->getDriverName() << ": " << cars[i]->getPoints() << endl;
 	}
 }
 
-RaceIterator* createIterator() {
+RaceIterator* Season::createIterator() {
 	return new RaceIterator(races, numRaces);
 }
 
