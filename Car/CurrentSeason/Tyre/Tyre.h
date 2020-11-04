@@ -4,9 +4,9 @@
 class Tyre {
 
 public:
-	virtual int getPerformance(int n) = 0;
+	virtual int getPerformance() = 0;
 
-	int calculateSpeed();
+	int calculateSpeed(int n);
 
 };
 
