@@ -16,7 +16,6 @@ class Season {
 		Race** races;
 		int numRaces;
 		Season();
-		~Season();
 		void orderTyres();
 		Car **getCars();
 		void displayConstructorsStandings();
@@ -27,8 +26,9 @@ class Season {
 
 	public:
 		static Season instance();
-		void addTeam(Team* team);
-		void addRace(Race* race);
+		~Season();
+		void addTeam(string teamName, string driver1, string driver2);
+		void addRace(int length, bool european, int date, string name, int averageLapTime);
 		void runSeason();
 };
 

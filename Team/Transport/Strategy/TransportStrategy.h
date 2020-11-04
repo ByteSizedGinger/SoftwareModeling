@@ -10,7 +10,7 @@ class TransportStrategy {
 
 public:
 TransportStrategy();
-virtual transport(Container* container)=0;
+virtual void transport(Container* container)=0;
 };
 
 #endif

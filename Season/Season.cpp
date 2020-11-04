@@ -1,16 +1,19 @@
 #include "Season/Season.h"
 
+using namespace std;
+
 Season::Season() {}
 
 Season::~Season() {
-	for (int i = 0; i < 10, i++) {
+	for (int i = 0; i < 10; i++) {
 		delete teams[i];
 	}
 	delete[] teams;
-	for (int i = 0; i < 21, i++) {
+	for (int i = 0; i < 21; i++) {
 		delete races[i];
 	}
 	delete[] races;
+	singleton = NULL;
 }
 
 Season Season::instance() {
@@ -20,7 +23,7 @@ Season Season::instance() {
 	return *(singleton);
 }
 
-void Season::addTeam() {
+void Season::addTeam(string teamName, string driver1, string driver2) {
 	Team** newList = new Team*[numTeams+1];
 	for (int i = 0; i < numTeams; i++) {
 		newList[i] = teams[i];
@@ -31,12 +34,12 @@ void Season::addTeam() {
 	numTeams++;
 }
 
-void Season::addRace(Race* race) {
+void Season::addRace(int length, bool european, int date, string name, int averageLapTime) {
 	Race** newList = new Race*[numRaces+1];
 	for (int i = 0; i < numRaces; i++) {
 		newList[i] = races[i];
 	}
-	newList[numRaces] = race;
+	newList[numRaces] = new Race(length, european, date, name, averageLapTime);
 	delete[] races;
 	races = newList;
 	numRaces++;
