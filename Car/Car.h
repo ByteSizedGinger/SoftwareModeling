@@ -7,7 +7,7 @@ using namespace std;
 
 class Car {
 private:
-    double averageSpeed;
+    int averageSpeed;
 
 public:
     Car();
@@ -15,7 +15,7 @@ public:
     virtual int getPoints();
     virtual void addPoints(int p);
     virtual void addPart(Car *part);
-    virtual void calculateSpeed();
+    virtual int calculateSpeed();
     virtual Car* clone() = 0;
     virtual void simulate();
     virtual void setRaceTime(int);        // raceTime = param
