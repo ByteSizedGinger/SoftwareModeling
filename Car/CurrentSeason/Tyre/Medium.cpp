@@ -1,13 +1,8 @@
 #include "Medium.h"
 
 int Medium::getPerformance() {
-  return performance;
+  return 70;
 }
 
 Medium::Medium() {
-	performance = 70;
-}
-
-int Medium::calculateSpeed(){
-  return 0;
 }

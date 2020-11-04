@@ -1,13 +1,8 @@
 #include "Hard.h"
 
 int Hard::getPerformance() {
-	return performance;
+	return 50;
 }
 
 Hard::Hard() {
-	performance = 50;
-}
-
-int Hard::calculateSpeed(){
-  return 0;
 }

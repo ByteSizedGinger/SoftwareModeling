@@ -1,13 +1,8 @@
 #include "Soft.h"
 
 int Soft::getPerformance() {
-  return performance;
+  return 100;
 }
 
 Soft::Soft() {
-	performance = 100;
-}
-
-int Soft::calculateSpeed(){
-  return 0;
 }
