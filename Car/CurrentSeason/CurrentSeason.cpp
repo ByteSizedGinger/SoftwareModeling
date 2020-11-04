@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+
 using namespace std;
 
 CurrentSeason::CurrentSeason(string n){
@@ -36,6 +37,10 @@ void CurrentSeason::calculateSpeed() : Car::calculateSpeed(){	//not sure if this
 Car* CurrentSeason::clone() {
 	Car* temp = new CurrentSeason(driver);
 	return temp;
+}
+
+string CurrentSeason::getDriverName() {
+	return driver->getDriver();
 }
 
 CurrentSeason::~CurrentSeason(){

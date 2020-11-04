@@ -1,6 +1,8 @@
 #ifndef CAR_H
 #define CAR_H
 
+#include "Car/CurrentSeason/Driver.h"
+
 using namespace std;
 
 class Car {
@@ -26,6 +28,7 @@ public:
     virtual void setRaceTime(int) = 0;        // raceTime = param
     virtual void incrementRaceTime(int) = 0;    //raceTime += param
     virtual int getRaceTime() = 0;
+    virtual string getDriverName() = 0;
 };
 
 #endif
