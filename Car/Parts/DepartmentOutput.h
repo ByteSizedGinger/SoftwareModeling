@@ -28,7 +28,7 @@ public:
 
     virtual double getSpeed();
 
-    DepartmentOutput *clone();
+    virtual Car *clone() = 0;
 
     void setRaceTime(int rt);
 
