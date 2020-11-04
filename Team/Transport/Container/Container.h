@@ -11,7 +11,7 @@ private:
 bool isBox;
 public:
    Container();
-   ~Container();
+   virtual ~Container();
    virtual void print();
    void setIsBox(bool b);
    bool getIsBox();
