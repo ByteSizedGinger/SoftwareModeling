@@ -1,11 +1,5 @@
 #include "Team.h"
-#include "Car/CurrentSeason.h"
-#include "Team/Transport/Container/Container.h"
-#include "Team/Transport/Strategy/TransportStrategy.h"
-#include "Team/Department/DepartmentFactory.h"
-#include "Team/Department/DepartmentMediator.h"
-#include "Team/TeamPoints.h"
-#include "Car/NextSeason.h"
+#include <iostream>
 
 Team::Team(int string_name, string driver1Name, string driver2Name) {
     cout << "Team " << string_name << " created" << endl;

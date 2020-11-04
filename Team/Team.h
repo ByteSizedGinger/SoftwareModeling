@@ -6,8 +6,8 @@
 #include "Team/Transport/Strategy/TransportStrategy.h"
 #include "Team/Department/DepartmentFactory.h"
 #include "Team/Department/DepartmentMediator.h"
-#include "Team/TeamPoints.h"
 #include "Car/NextSeason/NextSeason.h"
+#include "Car/Parts/DepartmentOutput.h"
 
 class Team {
 
@@ -39,7 +39,7 @@ public:
 
     string getName();
 
-    void partChanged();
+    void partChanged(DepartmentOutput* part);
 
     void updatePoints();
 

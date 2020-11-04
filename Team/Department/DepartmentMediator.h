@@ -9,6 +9,9 @@
 #include <string>
 using namespace std;
 
+class DepartmentFactory;
+class Team;
+
 class DepartmentMediator {
 private:
     int currentDepartment;
