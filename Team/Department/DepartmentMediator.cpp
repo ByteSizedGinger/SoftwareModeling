@@ -24,7 +24,7 @@ void DepartmentMediator::communicate(DepartmentOutput* part){
     }
 
     //tell the Team
-    team->partChanged();
+    team->partChanged(part);
 }
 
 void DepartmentMediator::attachDepartment(DepartmentFactory* department){

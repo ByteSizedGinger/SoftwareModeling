@@ -10,7 +10,6 @@ using namespace std;
 
 class DepartmentFactory {
 protected:
-    DepartmentOutput* part;
     DepartmentMediator* mediator;
 
 public:
@@ -18,7 +17,7 @@ public:
 
     ~DepartmentFactory();
 
-    virtual Car *createPart() = 0;
+    virtual void createPart() = 0;
 
     virtual void simulation() = 0;
 

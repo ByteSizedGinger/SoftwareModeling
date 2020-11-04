@@ -8,39 +8,32 @@ AerodynamicsFactory::~AerodynamicsFactory(){
 
 }
 
-Car *AerodynamicsFactory::createPart() {
-    if (part) {
-        delete part;
-    }
-
+void AerodynamicsFactory::createPart(){
     //create new part
-    part = new Aerodynamics();
+    Aerodynamics* part = new Aerodynamics();
 
     //determine if the part could be better
-    //give 20% chance for part to be better,  part is not better iff (speed <= 0) -> no need to test in the windTunnel
-    if (part->calculateSpeed() > 0) {
+    //give 20% chance for part to be better, part is not better iff (speed <= 0) -> no need to test in the windTunnel
+    if(part->getSpeed() > 0){
         //we know the part is better in theory, but is it better in practice -> use wind tunnel
         int windPerformance = windTunnel();
 
         //10% chance that has better wind performance than current part
         if(windPerformance >= 0 && windPerformance < 10){
-            car->removePart("Aerodynamics");
-            car->addPart(part);
-
-            //tell other departments that a new part has been added
+            //tell other departments that the new part is better, the team will add the part when it is passed to it by: team->partChanged(part);
             mediator->communicate(part);
         }
     }
 
-    //send Car back to Team
-    return car;
+    //de-allocate part
+    delete part;
 }
 
 void AerodynamicsFactory::simulation(){
     cout << "The driver is using the simulator to see the weather conditions and wind patterns predicted for the race." << endl;
 
     //get the speed of the part
-    int speed = part->calculateSpeed() % 5;
+    int speed = part->getSpeed() % 5;
 
     cout << "The Aerodynamics shows a speed of " << speed << "/5" << endl;
 }
