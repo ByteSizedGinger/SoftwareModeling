@@ -16,7 +16,7 @@ public:
 
     virtual ~DepartmentOutput();
 
-    void calculateSpeed();
+    int calculateSpeed();
 
     void addPart(Car *part);
 
