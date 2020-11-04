@@ -11,10 +11,13 @@ class Aerodynamics : public DepartmentOutput {
 public:
     Aerodynamics();
 
+	Aerodynamics* cpy();
+
     void removePart(string part);
 
     double getSpeed();
 
+	Car *clone();
 
 };
 
