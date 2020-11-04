@@ -19,7 +19,7 @@ void Chassis::removePart(string part) {
     else DepartmentOutput::removePart(part);
 }
 
-double Chassis::getSpeed(){
+int Chassis::getSpeed(){
     return speed * 250;
 }
 
