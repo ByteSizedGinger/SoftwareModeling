@@ -25,11 +25,6 @@ void EngineFactory::createPart(DepartmentOutput* oldPart){
 
 void EngineFactory::simulation(){
     cout << "The driver is using the simulator to adjust to the weight distribution of the Engine." << endl;
-
-    //get the speed of the part
-    int speed = part->getSpeed() % 5;
-
-    cout << "The Engine shows a speed of " << speed << "/5" << endl;
 }
 
 void EngineFactory::otherPartChanged(DepartmentOutput* part){
