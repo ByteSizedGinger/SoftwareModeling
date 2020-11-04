@@ -6,3 +6,23 @@ Driver::Driver(string n){
 	performance = 0;
 	name = n;
 }
+
+string Driver::getDriver() { 
+	return name; 
+}
+
+int Driver::getPerformance() {
+	return performance; 
+}
+
+void Driver::setPerformance(int p) { 
+	performance = p; 
+}
+
+int Driver::getPoints() {
+	return points;
+}
+
+void Driver::setPoints(int p) { 
+	points = p; 
+}
