@@ -25,11 +25,6 @@ void ElectronicsFactory::createPart(DepartmentOutput* oldPart){
 
 void ElectronicsFactory::simulation(){
     cout << "The driver is using the simulator to test the electronics, so they are familiar with the controls." << endl;
-
-    //get the speed of the part
-    int speed = part->getSpeed() % 5;
-
-    cout << "The Electronics shows a speed of " << speed << "/5" << endl;
 }
 
 void ElectronicsFactory::otherPartChanged(DepartmentOutput* part){

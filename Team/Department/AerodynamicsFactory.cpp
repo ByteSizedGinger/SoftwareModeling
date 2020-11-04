@@ -31,11 +31,6 @@ void AerodynamicsFactory::createPart(DepartmentOutput* oldPart){
 
 void AerodynamicsFactory::simulation(){
     cout << "The driver is using the simulator to see the weather conditions and wind patterns predicted for the race." << endl;
-
-    //get the speed of the part
-    int speed = part->getSpeed() % 5;
-
-    cout << "The Aerodynamics shows a speed of " << speed << "/5" << endl;
 }
 
 void AerodynamicsFactory::otherPartChanged(DepartmentOutput* part){

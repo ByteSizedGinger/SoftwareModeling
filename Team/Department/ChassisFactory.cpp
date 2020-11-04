@@ -25,11 +25,6 @@ void ChassisFactory::createPart(DepartmentOutput* oldPart){
 
 void ChassisFactory::simulation(){
     cout << "The driver is using the simulator to adjust to the weight distribution of the chassis." << endl;
-
-    //get the speed of the part
-    int speed = part->getSpeed() % 5;
-
-    cout << "The Chassis shows a speed of " << speed << "/5" << endl;
 }
 
 void ChassisFactory::otherPartChanged(DepartmentOutput* part){
