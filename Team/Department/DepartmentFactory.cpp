@@ -12,3 +12,11 @@ DepartmentFactory::~DepartmentFactory(){
         part = nullptr;
     }
 }
+
+int DepartmentFactory::getPartSpeed(Car* oldPart, string partType){
+    if(oldPart->getType() == partType){
+        return oldPart->getSpeed();
+    }else{
+        return getPartSpeed(oldPart->getNext(), partType);
+    }
+}
