@@ -33,12 +33,20 @@ void DepartmentOutput::addPart(Car* part){
 	else next = part;
 }
 
-double DepartmentOutput::calculateSpeed(){
-	double s;
-	if(this->getSpeed() < 0) s = this->getSpeed()/139040		//this is to make s in the range [-1,0] (negative speed)
-	else s = this->getSpeed()/35200					//this is to make s in the range [0,1] (positive speed)
-	averageSpeed += next != nullptr ? s + next->calculateSpeed() : s;
-	return averageSpeed;
+int DepartmentOutput::calculateSpeed(){
+	int s = this->getSpeed();
+	int rtrn;
+	if(next != nullptr){
+		if(!(dynamic_cast<CurrentSeason*>(next))){
+			averageSpeed += s + next->calculateSpeed();
+			rtrn = averageSpeed;
+		}else{
+			averageSpeed += s;
+			rtrn = averageSpeed;
+			averageSpeed = 0;
+		}
+	}
+	return rtrn;
 }
 
 DepartmentOutput::~DepartmentOutput(){
