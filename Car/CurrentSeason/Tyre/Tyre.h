@@ -3,15 +3,11 @@
 
 class Tyre {
 
-protected:
-	int performance;
-
 public:
-	virtual int getPerformance() = 0;
+	virtual int getPerformance(int n) = 0;
 
-	int calculateSpeed(){return 0;};
+	int calculateSpeed();
 
-	//~Tyre();
 };
 
 #endif
