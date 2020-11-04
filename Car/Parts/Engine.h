@@ -11,10 +11,13 @@ class Engine : public DepartmentOutput {
 public:
     Engine();
 
+	Engine* cpy();
+
     void removePart(string part);
 
     double getSpeed();
 
+	Car *clone();
 };
 
 #endif

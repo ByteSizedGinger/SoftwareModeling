@@ -11,9 +11,13 @@ class Chassis : public DepartmentOutput {
 public:
     Chassis();
 
+	Chassis* cpy();
+
     void removePart(string part);
 
     double getSpeed();
+
+	Car *clone();
 
 };
 
