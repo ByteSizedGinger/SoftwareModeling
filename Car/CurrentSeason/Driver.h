@@ -13,11 +13,11 @@ private:
 
 public:
 	Driver(string);
-	string getDriver() { return name; }
-	int getPerformance(){ return performance;}
-	void setPerformance(int p){ performance = p;}
-	int getPoints(){return points;}
-	void setPoints(int p){ points = p;}
+	string getDriver();
+	int getPerformance();
+	void setPerformance(int p);
+	int getPoints();
+	void setPoints(int p);
 	
 };
 
