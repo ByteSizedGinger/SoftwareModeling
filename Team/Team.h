@@ -22,9 +22,7 @@ private:
     Car *nextSeasonCar;
 
 public:
-//Michael will debug transport and strategy
-//Caleb will debug parts and upgrading them
-//Jenna will debug tyres points drivers
+
     Team(int string_name, string driver1Name, string driver2Name);
 
     ~Team();
