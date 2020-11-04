@@ -3,13 +3,11 @@
 
 #include "Car/Car.h"
 #include "Team/Team.h"
-#include "Car/Parts/DepartmentOutput.h"
+#include "Team/Department/DepartmentOutput.h"
 #include "Team/Department/DepartmentFactory.h"
 
 #include <string>
 using namespace std;
-
-class DepartmentFactory;
 
 class DepartmentMediator {
 private:

@@ -3,7 +3,7 @@
 
 #include "Car/Car.h"
 #include "Team/Department/DepartmentFactory.h"
-#include "Team/Department/Chassis.h"
+#include "Team/Car/Parts/Chassis.h"
 
 #include <string>
 using namespace std;
@@ -17,7 +17,7 @@ public:
 
     ~ChassisFactory();
 
-    void createPart();
+    void createPart(DepartmentOutput* oldPart);
 
     void simulation();
 

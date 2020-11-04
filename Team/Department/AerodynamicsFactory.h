@@ -3,7 +3,7 @@
 
 #include "Car/Car.h"
 #include "Team/Department/DepartmentFactory.h"
-#include "Team/Department/Aerodynamics.h"
+#include "Team/Car/Parts/Aerodynamics.h"
 
 using namespace std;
 
@@ -17,7 +17,7 @@ public:
 
     ~AerodynamicsFactory();
 
-    void createPart();
+    void createPart(DepartmentOutput* oldPart);
 
     void simulation();
 

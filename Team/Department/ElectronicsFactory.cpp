@@ -8,13 +8,13 @@ ElectronicsFactory::~ElectronicsFactory(){
 
 }
     
-void ElectronicsFactory::createPart(){
+void ElectronicsFactory::createPart(DepartmentOutput* oldPart){
     //create new part
     Electronics* part = new Electronics();
 
     //determine if the part could be better
     //give 20% chance for part to be better,  part is not better iff (speed <= 0)
-    if(part->getSpeed() > 0){
+    if(part->getSpeed() > getPartSpeed(oldPart, "Electronics")){
         //tell other departments that the new part is better, the team will add the part when it is passed to it by: team->partChanged(part);
         mediator->communicate(part);
     }

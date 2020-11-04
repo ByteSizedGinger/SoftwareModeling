@@ -1,7 +1,4 @@
 #include "Team/Department/DepartmentMediator.h"
-#include <iostream>
-
-using namespace std;
 
 DepartmentMediator::DepartmentMediator(Team* team): team(team), currentDepartment(0){
     //initialise array of DepartmentFactories
@@ -31,9 +28,9 @@ void DepartmentMediator::communicate(DepartmentOutput* part){
 }
 
 void DepartmentMediator::attachDepartment(DepartmentFactory* department){
-    if(currentDepartment < 4){
+    if(current < 4){
         departments[currentDepartment++] = department;
-    } else{
+    }else{
         cout << "A department mediator can only mediate for a maximum of 4 departments" << endl;
     }
 }

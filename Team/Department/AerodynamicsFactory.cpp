@@ -8,25 +8,25 @@ AerodynamicsFactory::~AerodynamicsFactory(){
 
 }
 
-void AerodynamicsFactory::createPart(){
+void AerodynamicsFactory::createPart(DepartmentOutput* oldPart){
     //create new part
-    Aerodynamics* part = new Aerodynamics();
+    Aerodynamics* newPart = new Aerodynamics();
 
     //determine if the part could be better
     //give 20% chance for part to be better, part is not better iff (speed <= 0) -> no need to test in the windTunnel
-    if(part->getSpeed() > 0){
+    if(newPart->getSpeed() > getPartSpeed(oldPart, "Aerodynamics")){
         //we know the part is better in theory, but is it better in practice -> use wind tunnel
         int windPerformance = windTunnel();
 
         //10% chance that has better wind performance than current part
         if(windPerformance >= 0 && windPerformance < 10){
             //tell other departments that the new part is better, the team will add the part when it is passed to it by: team->partChanged(part);
-            mediator->communicate(part);
+            mediator->communicate(newPart);
         }
     }
 
     //de-allocate part
-    delete part;
+    delete newPart;
 }
 
 void AerodynamicsFactory::simulation(){
