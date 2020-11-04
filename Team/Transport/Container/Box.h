@@ -16,7 +16,6 @@ public:
 Box();
 ~Box();
 void add(Container* item);
-void remove(Container* item);
 void print();
 };
 

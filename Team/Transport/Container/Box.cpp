@@ -19,10 +19,6 @@ void Box::add(Container * item){
   containers.push_front(item);
 }
 
-void Box::remove(Container * item){
-  containers.remove(item);
-}
-
 void Box::print(){
   cout<<"This box contains:\n";
   for(list<Container*>::iterator i=containers.begin(); i!=containers.end(); ++i){

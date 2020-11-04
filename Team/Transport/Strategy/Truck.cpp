@@ -9,5 +9,6 @@ Truck::Truck(){
 }
 
 void Truck::transport(Container * container){
+  cout<<"Transported to race by truck: "<<"\n";
   container->print();
 }
