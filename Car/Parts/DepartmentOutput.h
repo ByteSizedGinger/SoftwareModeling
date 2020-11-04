@@ -6,25 +6,37 @@
 
 using namespace std;
 
-class DepartmentOutput: public Car {
-	protected:
-		int speed;
-		string type;
-		Car* next;
-	public:
-		DepartmentOutput();
-		virtual ~DepartmentOutput();
-		double calculateSpeed();
-		void addPart(Car* part);
-		virtual void removePart(string part);
-		string getType(){return type;}
-		Car* getNext(){return next;}
-		virtual double getSpeed();
-		DepartmentOutput* clone();
-		virtual void setRaceTime(int rt);
-		virtual void incrementRaceTime(int rt);
-		virtual int getRaceTime();
-		void setDriver(Driver* d);
+class DepartmentOutput : public Car {
+protected:
+    int speed;
+    string type;
+    Car *next;
+public:
+    DepartmentOutput();
+
+    virtual ~DepartmentOutput();
+
+    double calculateSpeed();
+
+    void addPart(Car *part);
+
+    virtual void removePart(string part);
+
+    string getType() { return type; }
+
+    Car *getNext() { return next; }
+
+    virtual double getSpeed();
+
+    DepartmentOutput *clone();
+
+    void setRaceTime(int rt);
+
+    void incrementRaceTime(int rt);
+
+    int getRaceTime();
+
+    void setDriver(Driver *d);
 };
 
 #endif

@@ -9,7 +9,11 @@ using namespace std;
 class Chasis : public DepartmentOutput {
 
 public:
-    Chasis();
+    Chassis();
+
+    void removePart(string part);
+
+    double getSpeed();
 
 };
 

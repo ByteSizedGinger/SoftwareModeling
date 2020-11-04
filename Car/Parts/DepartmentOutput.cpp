@@ -45,16 +45,16 @@ DepartmentOutput::~DepartmentOutput(){
 	delete this->next;
 }
 
-virtual void setRaceTime(int rt){
-	next->setRaceTime(rt);
+void setRaceTime(int rt) {
+    next->setRaceTime(rt);
 }
 
-virtual void incrementRaceTime(int rt){
-	next->incrementRaceTime(rt);
+void incrementRaceTime(int rt) {
+    next->incrementRaceTime(rt);
 }
 
-virtual int getRaceTime(){
-	return next->getRaceTime();
+int getRaceTime() {
+    return next->getRaceTime();
 }
 
 void setDriver(Driver* d){

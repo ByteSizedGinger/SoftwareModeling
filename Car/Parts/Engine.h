@@ -11,6 +11,10 @@ class Engine : public DepartmentOutput {
 public:
     Engine();
 
+    void removePart(string part);
+
+    double getSpeed();
+
 };
 
 #endif

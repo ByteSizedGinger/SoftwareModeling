@@ -11,6 +11,10 @@ class Electronics : public DepartmentOutput {
 public:
     Electronics();
 
+    void removePart(string part);
+
+    double getSpeed();
+
 };
 
 #endif

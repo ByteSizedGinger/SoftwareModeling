@@ -11,6 +11,11 @@ class Aerodynamics : public DepartmentOutput {
 public:
     Aerodynamics();
 
+    void removePart(string part);
+
+    double getSpeed();
+
+
 };
 
 #endif
