@@ -3,7 +3,7 @@
 
 #include "Car/Car.h"
 #include "Team/Team.h"
-#include "Team/Department/DepartmentOutput.h"
+#include "Car/Parts/DepartmentOutput.h"
 #include "Team/Department/DepartmentFactory.h"
 
 #include <string>
