@@ -4,7 +4,7 @@
 #include "Team/Transport/Strategy/TransportStrategy.h"
 #include "Team/Department/DepartmentFactory.h"
 #include "Team/Department/DepartmentMediator.h"
-#include "Team/TeamPoints.h"
+
 #include "Car/NextSeason.h"
 
 Team::Team(int string_name, string driver1Name, string driver2Name) {
