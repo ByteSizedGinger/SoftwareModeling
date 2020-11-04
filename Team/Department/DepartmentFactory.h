@@ -18,7 +18,7 @@ public:
 
     ~DepartmentFactory();
 
-    virtual void createPart() = 0;
+    virtual void createPart(DepartmentOutput *oldPart) = 0;
 
     virtual void simulation() = 0;
 
