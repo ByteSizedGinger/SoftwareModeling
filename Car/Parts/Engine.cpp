@@ -19,7 +19,7 @@ void Engine::removePart(string part) {
     else DepartmentOutput::removePart(part);
 }
 
-double Engine::getSpeed(){
+int Engine::getSpeed(){
     return speed * 500;
 }
 

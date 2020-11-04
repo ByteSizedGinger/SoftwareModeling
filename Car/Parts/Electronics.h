@@ -15,7 +15,7 @@ public:
 
     void removePart(string part);
 
-    double getSpeed();
+    int getSpeed();
 
 	Car *clone();
 };

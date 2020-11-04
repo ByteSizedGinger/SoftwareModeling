@@ -19,7 +19,7 @@ void Electronics::removePart(string part) {
     else DepartmentOutput::removePart(part);
 }
 
-double Electronics::getSpeed(){
+int Electronics::getSpeed(){
     return speed * 10;
 }
 

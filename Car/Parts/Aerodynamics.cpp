@@ -19,7 +19,7 @@ void Aerodynamics::removePart(string part) {
     else DepartmentOutput::removePart(part);
 }
 
-double Aerodynamics::getSpeed(){
+int Aerodynamics::getSpeed(){
     return speed * 1000;
 }
 
