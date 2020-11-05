@@ -40,7 +40,7 @@ string Car::getDriverName() {
 void Car::setDriver(Driver *d) {
 }
 
-void Car::removePart(string part) {
+Car* Car::removePart(string part) {
 }
 
 void Car::addTyres(Tyre **t, int num) {

@@ -2,7 +2,7 @@
 #define DEPARTMENTFACTORY_H
 
 #include "Car/Car.h"
-#include "Team/Department/DepartmentOutput.h"
+#include "Car/Parts/DepartmentOutput.h"
 #include "Team/Department/DepartmentMediator.h"
 
 #include <string>

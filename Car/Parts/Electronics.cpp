@@ -17,11 +17,6 @@ Electronics *Electronics::cpy() { //might have to make return type Car*
     return temp;
 }
 
-void Electronics::removePart(string part) {
-    if (part == this->getType()) cout << part << " has been removed." << endl;
-    else DepartmentOutput::removePart(part);
-}
-
 int Electronics::getSpeed() {
     return speed;
 }

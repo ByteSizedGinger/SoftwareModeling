@@ -13,6 +13,8 @@
 #include "Team/Transport/Strategy/Truck.h"
 #include <iostream>
 
+using namespace std;
+
 Team::Team(string string_name, string driver1Name, string driver2Name) {
     cout << "Team " << string_name << " created" << endl;
     name = string_name;

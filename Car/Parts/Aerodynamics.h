@@ -14,8 +14,6 @@ public:
 
     Aerodynamics *cpy();
 
-    void removePart(string part);
-
     int getSpeed();
 
     Car *clone();

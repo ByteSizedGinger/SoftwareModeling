@@ -2,7 +2,7 @@
 #define CAR_H
 
 #include "Car/CurrentSeason/Driver.h"
-#include "Car/CurrentSeason/Tyre.h"
+#include "Car/CurrentSeason/Tyre/Tyre.h"
 
 using namespace std;
 
@@ -37,7 +37,7 @@ public:
 
     virtual string getType() = 0;
 
-    virtual void removePart(string part);
+    virtual Car* removePart(string part);
 
     virtual void addTyres(Tyre **t, int num);
 

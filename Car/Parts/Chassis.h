@@ -14,8 +14,6 @@ public:
 
     Chassis *cpy();
 
-    void removePart(string part);
-
     int getSpeed();
 
     Car *clone();

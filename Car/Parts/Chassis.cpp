@@ -15,11 +15,6 @@ Chassis* Chassis::cpy() { //might have to make return type Car*
     return temp;
 }
 
-void Chassis::removePart(string part) {
-    if (part == this->getType()) cout << part << " has been removed." << endl;
-    else DepartmentOutput::removePart(part);
-}
-
 int Chassis::getSpeed(){
     return speed;
 }

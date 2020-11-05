@@ -11,7 +11,17 @@ DepartmentOutput::DepartmentOutput() {
     averageSpeed = 0;
 }
 
-void DepartmentOutput::removePart(string part) {
+/*void */Car* DepartmentOutput::removePart(string part) {
+
+    if (type == part) {
+        cout << part << " has been removed." << endl;
+        Car* temp = next;
+        delete this;
+        return temp;
+    } else {
+        return next->removePart();
+    }
+    /*
     if (next != nullptr && (next->getType()) != "current") {
         DepartmentOutput *n = (dynamic_cast<DepartmentOutput *> (next));
         if (n->getType() == part) {
@@ -20,7 +30,7 @@ void DepartmentOutput::removePart(string part) {
             temp->removePart(part); //calls the concrete removePart() for the cout
             delete temp;
         }
-    } else cout << part << " could not be found." << endl;
+    } else cout << part << " could not be found." << endl;*/
 }
 
 
