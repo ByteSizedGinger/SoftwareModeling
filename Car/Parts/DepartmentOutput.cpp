@@ -15,7 +15,7 @@ Car* DepartmentOutput::removePart(string part) {
 
     if (type == part) {
         cout << part << " has been removed." << endl;
-        Car* temp = next;
+        Car *temp = next;
         next = NULL;
         delete this;
         return temp;

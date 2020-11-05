@@ -20,7 +20,7 @@ public:
 
     void addPart(Car *part);
 
-    Car* removePart(string part);
+    Car *removePart(string part);
 
     string getType() {
         return type;
