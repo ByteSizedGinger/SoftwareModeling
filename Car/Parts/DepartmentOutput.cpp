@@ -19,7 +19,7 @@ DepartmentOutput::DepartmentOutput() {
         delete this;
         return temp;
     } else {
-        next->removePart();
+        next->removePart(part);
         return this;
     }
     /*
