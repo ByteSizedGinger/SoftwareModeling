@@ -4,14 +4,15 @@
 using namespace std;
 
 Chassis::Chassis(){
+    speed = rand() % 100 + 150;
     type = "Chassis";
 }
 
 Chassis* Chassis::cpy() { //might have to make return type Car*
-	Chassis* temp = new Chassis();
-	temp.speed = speed;
-	temp->next = nullptr;
-	return temp;
+    Chassis *temp = new Chassis();
+    temp->speed = speed;
+    temp->next = nullptr;
+    return temp;
 }
 
 void Chassis::removePart(string part) {
@@ -20,14 +21,13 @@ void Chassis::removePart(string part) {
 }
 
 int Chassis::getSpeed(){
-    return speed * 250;
+    return speed;
 }
 
 Car* Chassis::clone() {
-	Car* temp = cpy();
-	if (next != nullptr)
-	{
-		temp->next = next->clone();
-	}
-	return temp;
+    Chassis *temp = cpy();
+    if (next != nullptr) {
+        temp->next = next->clone();
+    }
+    return temp;
 }

@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 class CurrentSeason : public Car {
 private:
     int raceTime;
@@ -23,10 +24,12 @@ public:
 
     int getPoints();
 
-    void calculateSpeed();
+    int calculateSpeed();
 
     virtual void setRaceTime(int rt);
+
     virtual void incrementRaceTime(int rt);
+
     virtual int getRaceTime();
 
     void setDriver(Driver *d);
@@ -36,6 +39,9 @@ public:
     string getDriverName();
 
     ~CurrentSeason();
+
+    string getType();
 };
 
 #endif
+

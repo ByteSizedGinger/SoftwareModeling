@@ -15,14 +15,18 @@ int Driver::getPerformance() {
 	return performance; 
 }
 
-void Driver::setPerformance(int p) { 
-	performance = p; 
+void Driver::setPerformance(int p) {
+    performance = p;
 }
 
 int Driver::getPoints() {
-	return points;
+    return points;
 }
 
-void Driver::setPoints(int p) { 
-	points = p; 
+void Driver::setPoints(int p) {
+    points = p;
+}
+
+string Driver::getName() {
+    return name;
 }

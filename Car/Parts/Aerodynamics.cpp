@@ -5,13 +5,15 @@ using namespace std;
 
 Aerodynamics::Aerodynamics(){
     type = "Aerodynamics";
+    speed = rand() % 500 + 500;
+
 }
 
 Aerodynamics* Aerodynamics::cpy() { //might have to make return type Car*
-	Aerodynamics* temp = new Aerodynamics();
-	temp.speed = speed;
-	temp->next = nullptr;
-	return temp;
+    Aerodynamics *temp = new Aerodynamics();
+    temp->speed = speed;
+    temp->next = nullptr;
+    return temp;
 }
 
 void Aerodynamics::removePart(string part) {
@@ -19,15 +21,15 @@ void Aerodynamics::removePart(string part) {
     else DepartmentOutput::removePart(part);
 }
 
-int Aerodynamics::getSpeed(){
-    return speed * 1000;
+int Aerodynamics::getSpeed() {
+
+    return speed;
 }
 
 Car* Aerodynamics::clone() {
-	Car* temp = cpy();
-	if (next != nullptr)
-	{
-		temp->next = next->clone();
-	}
-	return temp;
+    Aerodynamics *temp = cpy();
+    if (next != nullptr) {
+        temp->next = next->clone();
+    }
+    return temp;
 }

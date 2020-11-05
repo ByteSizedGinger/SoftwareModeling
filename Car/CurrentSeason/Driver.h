@@ -18,6 +18,8 @@ public:
 	void setPerformance(int p);
 	int getPoints();
 	void setPoints(int p);
+
+    string getName();
 	
 };
 

@@ -1,10 +1,14 @@
 #include "NextSeason.h"
 
-NextSeason(){
-	
+NextSeason::NextSeason() {
+
 }
 
-Car* NextSeason::clone() {
-	Car* temp = new NextSeason();
-	return temp;
+Car *NextSeason::clone() {
+    Car *temp = new NextSeason();
+    return temp;
+}
+
+string NextSeason::getType() {
+    return "next";
 }

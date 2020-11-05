@@ -2,70 +2,99 @@
 
 #include <string>
 #include <iostream>
+
 using namespace std;
-DepartmentOutput::DepartmentOutput(){
-	next = nullptr;
-	type = "";
-	averageSpeed = 0;
+
+DepartmentOutput::DepartmentOutput() {
+    next = nullptr;
+    type = "";
+    averageSpeed = 0;
 }
 
-void DepartmentOutput::removePart(string part){
-	if(next != nullptr && !(dynamic_cast<CurrentSeason*>(next))){
-		if(next->getType() == part){
-			Car* temp = next;
-			this->next = temp->next;			//removes it from the list
-			temp->removePart(part);			//calls the concrete removePart() for the cout
-			delete temp;
-		}
-	}
-	else cout << part << " could not be found." << endl;
+void DepartmentOutput::removePart(string part) {
+    if (next != nullptr && (next->getType()) != "current") {
+        DepartmentOutput *n = (dynamic_cast<DepartmentOutput *> (next));
+        if (n->getType() == part) {
+            DepartmentOutput *temp = n;
+            this->next = temp->next; //removes it from the list
+            temp->removePart(part); //calls the concrete removePart() for the cout
+            delete temp;
+        }
+    } else cout << part << " could not be found." << endl;
 }
 
-void DepartmentOutput::addPart(Car* part){
-	if(next != nullptr){
-		if(!(dynamic_cast<CurrentSeason*>(next)))	//if next is not CurrentSeason type
-			next->addPart(part);
-		else{					//if it is CurrentSeason
-			part->next = this->next;
-			this->next = part;
-		}
-	}
-	else next = part;
+
+void DepartmentOutput::addPart(Car *part) {
+    if (next != nullptr) {
+        if ((next->getType()) != "current") //if next is not CurrentSeason type
+            next->addPart(part);
+        else {
+            if (part->getType() != "current") {
+                DepartmentOutput *p = dynamic_cast<DepartmentOutput *>(part);
+                p->next = next;
+                next = p;
+            }
+
+        }
+    } else next = part;
 }
 
-int DepartmentOutput::calculateSpeed(){
-	int s = this->getSpeed();
-	int rtrn;
-	if(next != nullptr){
-		if(!(dynamic_cast<CurrentSeason*>(next))){
-			averageSpeed += s + next->calculateSpeed();
-			rtrn = averageSpeed;
-		}else{
-			averageSpeed += s;
-			rtrn = averageSpeed;
-			averageSpeed = 0;
-		}
-	}
-	return rtrn;
+int DepartmentOutput::calculateSpeed() {
+    averageSpeed = 0;
+    int s = this->getSpeed();
+
+    int rtrn;
+    if (next != nullptr) {
+        if ((next->getType()) != "current") {
+            averageSpeed += s + next->calculateSpeed();
+            rtrn = averageSpeed;
+        } else {
+            averageSpeed += s;
+            rtrn = averageSpeed;
+
+        }
+    }
+    return rtrn;
 }
 
-DepartmentOutput::~DepartmentOutput(){
-	delete this->next;
+DepartmentOutput::~DepartmentOutput() {
+    delete next;
 }
 
-void setRaceTime(int rt) {
+void DepartmentOutput::setRaceTime(int rt) {
     next->setRaceTime(rt);
+
 }
 
-void incrementRaceTime(int rt) {
+void DepartmentOutput::incrementRaceTime(int rt) {
     next->incrementRaceTime(rt);
 }
 
-int getRaceTime() {
+int DepartmentOutput::getRaceTime() {
     return next->getRaceTime();
 }
 
-void setDriver(Driver* d){
-	next->setDriver(d);
+void DepartmentOutput::setDriver(Driver *d) {
+    next->setDriver(d);
+}
+
+int DepartmentOutput::getPoints() {
+    return next->getPoints();
+}
+
+void DepartmentOutput::addPoints(int p) {
+    next->addPoints(p);
+}
+
+void DepartmentOutput::simulate() {
+    next->simulate();
+}
+
+string DepartmentOutput::getDriverName() {
+    return next->getDriverName();
+}
+
+int DepartmentOutput::getSpeed() {
+    return averageSpeed;
 }
 

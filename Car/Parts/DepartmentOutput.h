@@ -22,11 +22,15 @@ public:
 
     virtual void removePart(string part);
 
-    string getType() { return type; }
+    string getType() {
+        return type;
+    }
 
-    Car *getNext() { return next; }
+    Car *getNext() {
+        return next;
+    }
 
-    virtual double getSpeed();
+    virtual int getSpeed();
 
     virtual Car *clone() = 0;
 
@@ -37,6 +41,14 @@ public:
     int getRaceTime();
 
     void setDriver(Driver *d);
+
+    int getPoints();
+
+    void addPoints(int p);
+
+    void simulate();
+
+    string getDriverName();
 };
 
 #endif

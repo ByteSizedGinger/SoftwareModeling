@@ -3,21 +3,22 @@
 
 #include <string>
 #include "Car/Parts/DepartmentOutput.h"
+#include "Car/Car.h"
 
 using namespace std;
 
-class Chassis : public DepartmentOutput {
 
+class Chassis : public DepartmentOutput {
 public:
     Chassis();
 
-	Chassis* cpy();
+    Chassis *cpy();
 
     void removePart(string part);
 
     int getSpeed();
 
-	Car *clone();
+    Car *clone();
 
 };
 

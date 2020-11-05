@@ -5,10 +5,14 @@
 
 using namespace std;
 
-class NextSeason: public Car {
-	public:
-		NextSeason();
-		Car* clone();
+
+class NextSeason : public Car {
+public:
+    NextSeason();
+
+    Car *clone();
+
+    string getType();
 };
 
 #endif
