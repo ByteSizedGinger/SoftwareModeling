@@ -1,22 +1,23 @@
-#include <string>
 #include <iostream>
-#include <list>
 #include "Team/Transport/Container/Box.h"
 
 using namespace std;
 
 Box::Box() : Container(){
-  this.setIsBox(true);
+  this->setIsBox(true);
 }
 
 Box::~Box(){
-  //empty list and then delte the list
-  containers.clear();
-  delete containers;
+  //delete items in list
+  while (!containers.empty()) {
+	  Container* toDelete = containers.back();
+	  containers.pop_back();
+	  delete toDelete;
+  }
 }
 
 void Box::add(Container * item){
-  containers.push_front(item);
+  containers.push_back(item);
 }
 
 void Box::print(){

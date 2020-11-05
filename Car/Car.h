@@ -44,6 +44,8 @@ public:
     virtual void popOldTyre();
 
     virtual Tyre *currentTyre();
+
+    virtual int getSpeed();
 };
 
 #endif

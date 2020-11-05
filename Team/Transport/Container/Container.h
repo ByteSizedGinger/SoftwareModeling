@@ -8,11 +8,11 @@ using namespace std;
 
 class Container {
 private:
-bool isBox;
+   bool isBox;
 public:
    Container();
    virtual ~Container();
-   virtual void print();
+   virtual void print() = 0;
    void setIsBox(bool b);
    bool getIsBox();
 

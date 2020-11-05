@@ -9,6 +9,9 @@
 #include "Car/NextSeason/NextSeason.h"
 #include "Car/Parts/DepartmentOutput.h"
 
+class DepartmentFactory;
+class DepartmentMediator;
+
 class Team {
 
 private:

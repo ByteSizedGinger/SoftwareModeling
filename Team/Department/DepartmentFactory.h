@@ -5,8 +5,11 @@
 #include "Car/Parts/DepartmentOutput.h"
 #include "Team/Department/DepartmentMediator.h"
 
+#include <iostream>
 #include <string>
 using namespace std;
+
+class DepartmentMediator;
 
 class DepartmentFactory {
 protected:

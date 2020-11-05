@@ -1,6 +1,10 @@
 #include "Season/Season.h"
 #include <iostream>
 
+using namespace std;
+
+Season* Season::singleton;
+
 Season::Season() {}
 
 Season::~Season() {
@@ -46,7 +50,9 @@ void Season::addRace(int length, bool european, int date, string name, int avera
 
 void Season::runSeason() {
 	int upgradesBlockedUntil = 0; //cannot do upgrades if we are before this date
+	cout << endl << "The season has started" << endl;
 	for (int date = 1; date <= 365; date++) {
+		cout << "Day 1" << endl;
 		RaceIterator* it = createIterator();
 		for (it->first(); !it->isDone(); it->next()) {
 			Race* race = it->currentItem();

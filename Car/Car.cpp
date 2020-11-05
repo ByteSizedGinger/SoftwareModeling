@@ -41,6 +41,7 @@ void Car::setDriver(Driver *d) {
 }
 
 Car* Car::removePart(string part) {
+    return NULL;
 }
 
 void Car::addTyres(Tyre **t, int num) {
@@ -51,4 +52,8 @@ void Car::popOldTyre() {
 
 Tyre *Car::currentTyre() {
     return nullptr;
+}
+
+int Car::getSpeed() {
+    return 0;
 }

@@ -5,7 +5,8 @@
 using namespace std;
 
 Equipment::Equipment(string name): Container(){
-  this.name=name;
+  this->name=name;
+  this->setIsBox(false);
 }
 
 void Equipment::print(){

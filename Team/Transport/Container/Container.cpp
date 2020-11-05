@@ -4,17 +4,9 @@
 
 using namespace std;
 
-Container::Container(){
-  isBox=false;
-}
+Container::Container(){}
 
-Container::~Container(){
-  isBox=NULL;
-}
-
-void Container::print(){
-  cout<<isBox.toString();
-}
+Container::~Container(){}
 
 void Container::setIsBox(bool b){
   isBox=b;

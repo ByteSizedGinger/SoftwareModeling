@@ -16,16 +16,19 @@
 using namespace std;
 
 Team::Team(string string_name, string driver1Name, string driver2Name) {
-    cout << "Team " << string_name << " created" << endl;
+    cout << string_name << " has entered the season with drivers " << driver1Name << " and " << driver2Name << " on their team" << endl;
     name = string_name;
+    currentCars = new Car*[2];
+
     currentCars[0] = new Aerodynamics();
     currentCars[0]->addPart(new Electronics());
     currentCars[0]->addPart(new Engine());
     currentCars[0]->addPart(new Chassis());
     currentCars[0]->addPart(new CurrentSeason(driver1Name));
+
     currentCars[1] = currentCars[0]->clone();
     currentCars[1]->setDriver(new Driver(driver2Name));
-    //currentCars[1] = new CurrentSeason(driver2Name);
+
     nextSeasonCar = new Aerodynamics();
     nextSeasonCar->addPart(new Electronics());
     nextSeasonCar->addPart(new Engine());
@@ -36,6 +39,7 @@ Team::Team(string string_name, string driver1Name, string driver2Name) {
     mediator = new DepartmentMediator(this);
     container = nullptr;
     transportStrategy = nullptr;
+
     departments = new DepartmentFactory *[4];
     departments[0] = new AerodynamicsFactory(mediator);
     departments[1] = new ChassisFactory(mediator);
@@ -51,7 +55,7 @@ void Team::transport() {
 }
 
 void Team::orderTyres() {
-cout << name << " ordering tyres" << endl;
+cout << name << " is ordering tyres" << endl;
 }
 
 Car **Team::getCurrentSeasonCars() {
@@ -148,5 +152,7 @@ Team::~Team() {
 
 }
 
+void Team::partChanged(DepartmentOutput* part) {
 
+}
 

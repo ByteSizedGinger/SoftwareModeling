@@ -38,5 +38,7 @@ int main() {
 	season.addRace(67, false, 200, "Australian Grand Prix", 90);
 	season.addRace(67, false, 210, "Australian Grand Prix", 90);
 
+	season.runSeason();
+
 	return 0;
 }

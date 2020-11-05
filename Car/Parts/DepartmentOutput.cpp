@@ -38,16 +38,16 @@ Car* DepartmentOutput::removePart(string part) {
 
 void DepartmentOutput::addPart(Car *part) {
     if (next != nullptr) {
-        if ((next->getType()) != "current") //if next is not CurrentSeason type
+        //if ((next->getType()) != "current") //if next is not CurrentSeason type
             next->addPart(part);
-        else {
+        /*else {
             if (part->getType() != "current") {
                 DepartmentOutput *p = dynamic_cast<DepartmentOutput *>(part);
                 p->next = next;
                 next = p;
             }
 
-        }
+        }*/
     } else next = part;
 }
 

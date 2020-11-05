@@ -4,6 +4,7 @@
 #include "Team/Team.h"
 #include "Season/Race.h"
 #include "Season/RaceIterator.h"
+#include <string>
 
 using namespace std;
 
