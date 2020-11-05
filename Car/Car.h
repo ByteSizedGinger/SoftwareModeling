@@ -2,6 +2,7 @@
 #define CAR_H
 
 #include "Car/CurrentSeason/Driver.h"
+#include "Car/CurrentSeason/Tyre.h"
 
 using namespace std;
 
@@ -23,15 +24,26 @@ public:
     virtual int calculateSpeed();
 
     virtual Car *clone() = 0;
+
     virtual void simulate();
+
     virtual void setRaceTime(int);        // raceTime = param
     virtual void incrementRaceTime(int);    //raceTime += param
     virtual int getRaceTime();
+
     virtual string getDriverName();
 
     virtual void setDriver(Driver *d);
 
     virtual string getType() = 0;
+
+    virtual void removePart(string part);
+
+    virtual void addTyres(Tyre **t, int num);
+
+    virtual void popOldTyre();
+
+    virtual Tyre *currentTyre();
 };
 
 #endif
