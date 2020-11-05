@@ -49,6 +49,12 @@ public:
     void simulate();
 
     string getDriverName();
+
+    void addTyres(Tyre **t, int num);
+
+    void popOldTyre();
+
+    Tyre *currentTyre();
 };
 
 #endif

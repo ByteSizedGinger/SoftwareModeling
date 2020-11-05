@@ -94,7 +94,20 @@ string DepartmentOutput::getDriverName() {
     return next->getDriverName();
 }
 
+
 int DepartmentOutput::getSpeed() {
-    return averageSpeed;
+    return speed;
+}
+
+void DepartmentOutput::addTyres(Tyre **t, int num) {
+    next->addTyres(t, num);
+}
+
+void DepartmentOutput::popOldTyre() {
+    next->popOldTyre();
+}
+
+Tyre *DepartmentOutput::currentTyre() {
+    return next->currentTyre();
 }
 
