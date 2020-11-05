@@ -19,7 +19,8 @@ DepartmentOutput::DepartmentOutput() {
         delete this;
         return temp;
     } else {
-        return next->removePart();
+        next->removePart();
+        return this;
     }
     /*
     if (next != nullptr && (next->getType()) != "current") {
