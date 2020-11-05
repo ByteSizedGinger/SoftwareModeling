@@ -11,15 +11,16 @@ DepartmentOutput::DepartmentOutput() {
     averageSpeed = 0;
 }
 
-/*void */Car* DepartmentOutput::removePart(string part) {
+Car* DepartmentOutput::removePart(string part) {
 
     if (type == part) {
         cout << part << " has been removed." << endl;
         Car* temp = next;
+        next = NULL;
         delete this;
         return temp;
     } else {
-        next->removePart(part);
+        next = next->removePart(part);
         return this;
     }
     /*
@@ -69,7 +70,9 @@ int DepartmentOutput::calculateSpeed() {
 }
 
 DepartmentOutput::~DepartmentOutput() {
-    delete next;
+    if (next != NULL) {
+        delete next;
+    }
 }
 
 void DepartmentOutput::setRaceTime(int rt) {
