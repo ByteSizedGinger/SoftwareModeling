@@ -13,7 +13,7 @@ DepartmentOutput::DepartmentOutput() {
 
 /*void */Car* DepartmentOutput::removePart(string part) {
 
-    if (type == part) {
+    if (type.compare(part)) {
         cout << part << " has been removed." << endl;
         Car* temp = next;
         delete this;
