@@ -41,6 +41,12 @@ public:
     ~CurrentSeason();
 
     string getType();
+
+    void addTyres(Tyre** t, int num);
+
+    void popOldTyre();
+
+    Tyre* currentTyre();
 };
 
 #endif

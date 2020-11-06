@@ -46,6 +46,8 @@ public:
     virtual Tyre *currentTyre();
 
     virtual int getSpeed();
+
+    virtual void printContents(){};
 };
 
 #endif

@@ -8,16 +8,16 @@ ChassisFactory::~ChassisFactory(){
 
 }
     
-void ChassisFactory::createPart(DepartmentOutput* oldPart){
+void ChassisFactory::createPart(DepartmentOutput* oldPart,string season){
     //create new part
-    cout << "Creating chasis part" << endl;
+    //cout << "Creating chasis part" << endl;
     Chassis* part = new Chassis();
 
     //determine if the part could be better
     //give 20% chance for part to be better,  part is not better iff (speed <= 0)
     if (part->getSpeed() > getPartSpeed(oldPart, "Chassis")) {
         //tell other departments that the new part is better, the team will add the part when it is passed to it by: team->partChanged(part);
-        mediator->communicate(part);
+        mediator->communicate(part,season);
     } else {
 
         //de-allocate part

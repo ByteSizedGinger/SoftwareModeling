@@ -3,6 +3,7 @@
 
 #include "Car/Car.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -22,13 +23,9 @@ public:
 
     Car *removePart(string part);
 
-    string getType() {
-        return type;
-    }
+    string getType();
 
-    Car *getNext() {
-        return next;
-    }
+    Car* getNext();
 
     virtual int getSpeed();
 
@@ -55,6 +52,17 @@ public:
     void popOldTyre();
 
     Tyre *currentTyre();
+
+    void printContents(){
+        cout << getType() << " ";
+        DepartmentOutput* current = this;
+        while (current->next->getType() != "current")
+        {
+            cout << current->next->getType() << " ";
+            current = dynamic_cast<DepartmentOutput*>(current->next);
+        }
+        cout << current->next->getType() << endl;
+    }
 };
 
 #endif

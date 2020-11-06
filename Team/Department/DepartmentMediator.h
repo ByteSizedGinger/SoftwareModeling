@@ -23,7 +23,7 @@ public:
 
     ~DepartmentMediator();
 
-    void communicate(DepartmentOutput* part);
+    void communicate(DepartmentOutput* part,string season);
 
     void attachDepartment(DepartmentFactory* department);
 

@@ -42,7 +42,7 @@ public:
 
     string getName();
 
-    void partChanged(DepartmentOutput* part);
+    void partChanged(DepartmentOutput* part, string season);
 
     void updatePoints();
 

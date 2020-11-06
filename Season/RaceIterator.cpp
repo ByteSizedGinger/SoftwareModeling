@@ -21,7 +21,7 @@ void RaceIterator::next() {
 }
 
 bool RaceIterator::isDone() {
-	return (current < length);
+	return (current == length);
 }
 
 Race* RaceIterator::currentItem() {

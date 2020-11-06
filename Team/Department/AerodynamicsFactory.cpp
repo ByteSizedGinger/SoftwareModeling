@@ -9,9 +9,9 @@ AerodynamicsFactory::~AerodynamicsFactory(){
 
 }
 
-void AerodynamicsFactory::createPart(DepartmentOutput* oldPart){
+void AerodynamicsFactory::createPart(DepartmentOutput* oldPart,string season){
     //create new part
-    cout << "Creating aerodynamic part" << endl;
+    //cout << "Creating aerodynamic part" << endl;
     Aerodynamics* newPart = new Aerodynamics();
 
     //determine if the part could be better
@@ -23,7 +23,7 @@ void AerodynamicsFactory::createPart(DepartmentOutput* oldPart){
         //10% chance that has better wind performance than current part
         if (windPerformance >= 0 && windPerformance < 10) {
             //tell other departments that the new part is better, the team will add the part when it is passed to it by: team->partChanged(part);
-            mediator->communicate(newPart);
+            mediator->communicate(newPart,season);
         } else {
             //de-allocate part
             delete newPart;

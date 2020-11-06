@@ -16,13 +16,23 @@ Race::Race(int l, bool euro, int d, string n, int avgL) {
 
 void Race::runRace() {
     for (int i = 0; i < numCars; i++) {
-        cars[i]->setRaceTime(0);
+        cars[i]->setRaceTime(i*50);
     }
-    cout << "Starting race: " << name;
+    cout <<"Starting race: " << RED << name << RESET <<endl;
+     cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+    
+    int halfway=laps/2;
     for (int i = 0; i < laps; i++) {
         for (int j = 0; j < numCars; ++j) {
-            int time = rand() % 50 + averageLapTime;
+             int speed=cars[j]->calculateSpeed();
+             Tyre* t = cars[j]->currentTyre();
+
+            int time = rand() % 5 +t->calculateSpeed(speed);
             cars[j]->incrementRaceTime(time);
+            
+        }
+        if(i==halfway){
+            pitStop(); 
         }
     }
     cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
@@ -31,52 +41,64 @@ void Race::runRace() {
 }
 
 void Race::printLeaderBoard() {
-    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl << GREEN;
     sortDrivers();
     for (int i = 0; i < numCars; i++) {
-        cout << i << ":" << cars[i]->getDriverName() << endl;
+        cout << i+1 << ": " << cars[i]->getDriverName() << endl;
     }
-    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+    cout << RESET << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
 }
 
 void Race::runQualifying() {
-    cout << "Starting Qualifying: " << name;
+    cout << RED << "Starting Qualifying: " << name << endl;
     for (int i = 0; i < numCars; i++) {
         cars[i]->setRaceTime(0);
     }
 
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < numCars; ++j) {
-            int time = rand() % 20 + averageLapTime;
+            int speed=cars[j]->calculateSpeed();
+             Tyre* t = cars[j]->currentTyre();
+
+            int time = rand() % 20 +t->calculateSpeed(speed);
+         
             cars[j]->incrementRaceTime(time);
         }
     }
-    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
-    cout << "Qualifying results: " << endl;
+    for(int i=0;i<numCars;i++){
+        cars[i]->popOldTyre();
+    }
+   
+    cout << "Qualifying results: " << RESET << endl;
     printLeaderBoard();
 }
 
 void Race::runFreePractice1() {
-    cout << "Starting free Practice 1: " << name;
-    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+    cout << RED << "Starting free Practice 1: " << name << endl;
+
     for (int i = 0; i < numCars; i++) {
         cars[i]->setRaceTime(0);
     }
 
     for (int j = 0; j < numCars; ++j) {
-        int time = rand() % 80 + averageLapTime;
+        int speed=cars[j]->calculateSpeed();
+             Tyre* t = cars[j]->currentTyre();
+
+            int time = rand() % 80 +t->calculateSpeed(speed);
+        cars[j]->popOldTyre();
         cars[j]->incrementRaceTime(time);
     }
 
-    cout << "Free practice 1 results: " << endl;
+    cout << "Free practice 1 results: " << RESET << endl;
     printLeaderBoard();
 }
 
 void Race::pitStop() {
     for (int j = 0; j < numCars; ++j) {
-        int time = rand() % 20 + 25;
+        int time = rand() % 10 + 20;
         cars[j]->incrementRaceTime(time);
-        cout << cars[j]->getDriverName() << " had a pit stop time of " << time << endl;
+        cars[j]->popOldTyre();
+        cout << cars[j]->getDriverName() << " had a pit stop time of " << time <<"s"<< endl;
     }
 }
 
@@ -90,20 +112,24 @@ bool Race::isEuropean() {
 
 
 void Race::runFreePractice2() {
-    cout << "Starting free Practice 2: " << name;
-    cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+    cout << RED << "Starting free Practice 2: " << name << endl;
+
     for (int i = 0; i < numCars; i++) {
         cars[i]->setRaceTime(0);
     }
 
     for (int j = 0; j < numCars; ++j) {
+            int speed=cars[j]->calculateSpeed();
+            Tyre* t = cars[j]->currentTyre();
 
-        int time = rand() % 60 + averageLapTime;
+            int time = rand() % 60 +t->calculateSpeed(speed);
+       cars[j]->popOldTyre();
         cars[j]->incrementRaceTime(time);
     }
 
-    cout << "Free practice 2 results: " << endl;
+    cout << "Free practice 2 results: " << RESET << endl;
     printLeaderBoard();
+     
 }
 
 void Race::runRaceWeekend(Car **c, int num) {
@@ -113,13 +139,17 @@ void Race::runRaceWeekend(Car **c, int num) {
     for (int i = 0; i < numCars; i++) {
         cars[i]->setRaceTime(0);
     }
-    cout << "Race weekend for race:" << name << " is starting" << endl;
+    cout << RED << "Race weekend for race:" << name << " is starting" << RESET << endl;
+        cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+    cout<< BLUE << "Number of laps: "<<laps<<endl;
+    cout<<"Average Lap Time: "<<averageLapTime<<"s"<< RESET << endl;
+         cout << "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     runFreePractice1();
     runFreePractice2();
     runQualifying();
     runRace();
     allocatePoints();
-    cout << "Race weekend for race:" << name << " has ended" << endl;
+    cout << RED << "Race weekend for race:" << name << " has ended" <<  RESET << endl;
 
 }
 

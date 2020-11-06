@@ -14,7 +14,7 @@ DepartmentOutput::DepartmentOutput() {
 Car* DepartmentOutput::removePart(string part) {
 
     if (type == part) {
-        cout << part << " has been removed." << endl;
+      
         Car *temp = next;
         next = NULL;
         delete this;
@@ -38,20 +38,15 @@ Car* DepartmentOutput::removePart(string part) {
 
 void DepartmentOutput::addPart(Car *part) {
     if (next != nullptr) {
-        //if ((next->getType()) != "current") //if next is not CurrentSeason type
+        if ((next->getType()) != "base") //if next is not CurrentSeason type
             next->addPart(part);
-        /*else {
-            if (part->getType() != "current") {
-                DepartmentOutput *p = dynamic_cast<DepartmentOutput *>(part);
-                p->next = next;
-                next = p;
-            }
-
-        }*/
-    } else {
-        next = part;
-        cout << "Part: " << part->getType() << " added" << endl;
-    }
+        else {
+            DepartmentOutput *p = dynamic_cast<DepartmentOutput *>(part);
+            p->next = next;
+            next = p;
+        }
+    } else next = part;
+    //cout << "Part: " << part->getType() << " added" << endl;
 }
 
 int DepartmentOutput::calculateSpeed() {
@@ -60,7 +55,7 @@ int DepartmentOutput::calculateSpeed() {
 
     int rtrn;
     if (next != nullptr) {
-        if ((next->getType()) != "current") {
+        if ((next->getType()) != "base") {
             averageSpeed += s + next->calculateSpeed();
             rtrn = averageSpeed;
         } else {
@@ -126,5 +121,13 @@ void DepartmentOutput::popOldTyre() {
 
 Tyre *DepartmentOutput::currentTyre() {
     return next->currentTyre();
+}
+
+Car *DepartmentOutput::getNext() {
+    return next;
+}
+
+string DepartmentOutput::getType(){
+    return type;
 }
 

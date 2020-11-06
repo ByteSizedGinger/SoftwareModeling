@@ -74,5 +74,19 @@ void CurrentSeason::setDriver(Driver *d) {
 }
 
 string CurrentSeason::getType() {
-    return "current";
+    return "base";
+}
+
+void CurrentSeason::addTyres(Tyre** t, int num) {
+    for(int i=0;i<num;i++){
+        tyres.push(t[i]);
+    }
+}
+
+void CurrentSeason::popOldTyre() {
+    tyres.pop();
+}
+
+Tyre* CurrentSeason::currentTyre() {
+    return tyres.front();
 }

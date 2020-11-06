@@ -1,6 +1,11 @@
 #ifndef SEASON_H
 #define SEASON_H
 
+//colours for output
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+
 #include "Team/Team.h"
 #include "Season/Race.h"
 #include "Season/RaceIterator.h"
@@ -24,6 +29,7 @@ class Season {
 		void transport(bool european);
 		RaceIterator *createIterator();
 		void upgradeTeamCars();
+		void updateTeamPoints();
 
 	public:
 		static Season instance();

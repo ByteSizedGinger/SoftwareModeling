@@ -1,7 +1,7 @@
 #include "Team/Department/DepartmentFactory.h"
 
 DepartmentFactory::DepartmentFactory(DepartmentMediator* mediator) : mediator(mediator) {
-    
+    mediator->attachDepartment(this);
 }
 
 DepartmentFactory::~DepartmentFactory(){

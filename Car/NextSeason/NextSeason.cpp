@@ -10,5 +10,5 @@ Car *NextSeason::clone() {
 }
 
 string NextSeason::getType() {
-    return "next";
+    return "base";
 }

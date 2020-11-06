@@ -8,15 +8,15 @@ EngineFactory::~EngineFactory(){
 
 }
     
-void EngineFactory::createPart(DepartmentOutput* oldPart){
+void EngineFactory::createPart(DepartmentOutput* oldPart, string season){
     //create new part
     Engine* part = new Engine();
-    cout << "Creating engine part" << endl;
+    //cout << "Creating engine part" << endl;
     //determine if the part could be better
     //give 20% chance for part to be better,  part is not better iff (speed <= 0)
     if (part->getSpeed() > getPartSpeed(oldPart, "Engine")) {
         //tell other departments that the new part is better, the team will add the part when it is passed to it by: team->partChanged(part);
-        mediator->communicate(part);
+        mediator->communicate(part, season);
     } else {
         //de-allocate part
         delete part;

@@ -20,7 +20,7 @@ public:
 
     ~DepartmentFactory();
 
-    virtual void createPart(DepartmentOutput* oldPart) = 0;
+    virtual void createPart(DepartmentOutput* oldPart,string season) = 0;
 
     virtual void simulation() = 0;
 

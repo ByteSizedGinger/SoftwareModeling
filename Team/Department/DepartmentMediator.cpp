@@ -14,9 +14,10 @@ DepartmentMediator::~DepartmentMediator(){
     
 }
 
-void DepartmentMediator::communicate(DepartmentOutput* part){
+void DepartmentMediator::communicate(DepartmentOutput* part,string season){
     string partString = part->getType();
-
+    //tell the Team
+    team->partChanged(part,season);
     for(int i = 0; i < 4; ++i){
         //tell all other departments of the newly added part
         if(departments[i]->getType() != partString){
@@ -24,8 +25,7 @@ void DepartmentMediator::communicate(DepartmentOutput* part){
         }
     }
 
-    //tell the Team
-    team->partChanged(part);
+    
 }
 
 void DepartmentMediator::attachDepartment(DepartmentFactory* department){

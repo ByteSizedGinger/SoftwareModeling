@@ -52,23 +52,27 @@ void Season::runSeason() {
 	int upgradesBlockedUntil = 0; //cannot do upgrades if we are before this date
 	cout << endl << "The season has started" << endl;
 	for (int date = 1; date <= 365; date++) {
-		cout << "Day 1" << endl;
+		cout << GREEN << "Day " << date << RESET << endl;
 		RaceIterator* it = createIterator();
 		for (it->first(); !it->isDone(); it->next()) {
 			Race* race = it->currentItem();
 
-			if (!race->isEuropean() && race->getDate()-90 == date) {
+			if ((!race->isEuropean() && race->getDate()-90 == date) || (date == 1 && !race->isEuropean() && race->getDate()-90 == date)) {
 				transport(false);
-			} else if (race->isEuropean() && race->getDate()-7 == date) {
+			} else if ((race->isEuropean() && race->getDate()-7 == date) || (date == 1 && race->isEuropean() && race->getDate()-7 < date)) {
 				transport(true);
 			}
 			
-			if (race->getDate()-30 == date) {
+			if (race->getDate()-30 == date || (date == 1 && race->getDate()-30 < date)) {
 				orderTyres();
 			}
 
 			if (race->getDate() == date) {
 				race->runRaceWeekend(getCars(), numTeams*2);
+				updateTeamPoints();
+				displayDriversStandings();
+				cout << endl;
+				displayConstructorsStandings();
 				upgradesBlockedUntil = date+2;
 				//cannot do upgrades today (date+0), tomorrow (date+1) or the next day (date+2).
 				//can do upgrades the following day (date+3)
@@ -80,10 +84,23 @@ void Season::runSeason() {
 			upgradeTeamCars();
 		}
 	}
+	cout << RED << "Final Standings:" << RESET << endl;
+	displayDriversStandings();
+	cout << endl;
+	displayConstructorsStandings();
 }
 
 void Season::displayConstructorsStandings() {
-	cout << "Constructors' Standings:" << endl;
+	cout << RED << "Constructors' Standings:" << RESET << endl;
+	for (int i = 0; i < numTeams; i++) {
+		for (int j = i+1; j < numTeams; j++) {
+			if (teams[i]->getConstructorPoints() < teams[j]->getConstructorPoints()) {
+				Team* temp = teams[i];
+				teams[i] = teams[j];
+				teams[j] = temp;
+			}
+		}
+	}
 	for (int i = 0; i < numTeams; i++) {
 		cout << (i+1) << ". " << teams[i]->getName() << ": " << teams[i]->getConstructorPoints() << endl;
 	}
@@ -117,7 +134,16 @@ void Season::transport(bool european) {
 
 void Season::displayDriversStandings() {
 	Car** cars = getCars();
-	cout << "Drivers' Standings:" << endl;
+	cout << RED << "Drivers' Standings:" << RESET << endl;
+	for (int i = 0; i < numTeams*2; i++) {
+		for (int j = i+1; j < numTeams*2; j++) {
+			if (cars[i]->getPoints() < cars[j]->getPoints()) {
+				Car* temp = cars[i];
+				cars[i] = cars[j];
+				cars[j] = temp;
+			}
+		}
+	}
 	for (int i = 0; i < numTeams*2; i++) {
 		cout << (i+1) << ". " << cars[i]->getDriverName() << ": " << cars[i]->getPoints() << endl;
 	}
@@ -129,7 +155,14 @@ RaceIterator* Season::createIterator() {
 
 void Season::upgradeTeamCars() {
 	for (int i = 0; i < numTeams; i++) {
-        cout << teams[i]->getName() << endl;
+        //cout << teams[i]->getName() << endl;
         teams[i]->upgrade();
+    }
+}
+
+void Season::updateTeamPoints() {
+	for (int i = 0; i < numTeams; i++) {
+        //cout << teams[i]->getName() << endl;
+        teams[i]->updatePoints();
     }
 }

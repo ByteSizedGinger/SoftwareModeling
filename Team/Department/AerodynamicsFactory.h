@@ -17,7 +17,7 @@ public:
 
     ~AerodynamicsFactory();
 
-    void createPart(DepartmentOutput* oldPart);
+    void createPart(DepartmentOutput* oldPart,string season);
 
     void simulation();
 
