@@ -16,9 +16,10 @@
 using namespace std;
 
 Team::Team(string string_name, string driver1Name, string driver2Name) {
-    cout << string_name << " has entered the season with drivers " << driver1Name << " and " << driver2Name << " on their team" << endl;
+    cout << string_name << " has entered the season with drivers " << driver1Name << " and " << driver2Name
+         << " on their team" << endl;
     name = string_name;
-    currentCars = new Car*[2];
+    currentCars = new Car *[2];
 
     currentCars[0] = new Aerodynamics();
     currentCars[0]->addPart(new Electronics());
@@ -55,7 +56,7 @@ void Team::transport() {
 }
 
 void Team::orderTyres() {
-cout << name << " is ordering tyres" << endl;
+    cout << name << " is ordering tyres" << endl;
 }
 
 Car **Team::getCurrentSeasonCars() {
@@ -69,7 +70,7 @@ void Team::setEuropeanStrategy() {
     if (container) {
         delete container;
     }
-    Box* box = new Box();
+    Box *box = new Box();
     box->add(new Equipment("Garage Equipment"));
     box->add(new Equipment("Catering Equipment"));
     box->add(new Equipment("Other Equipment"));
@@ -84,7 +85,7 @@ void Team::setNonEuropeanStrategy() {
     if (container) {
         delete container;
     }
-    Box* box = new Box();
+    Box *box = new Box();
     box->add(new Equipment("Garage Equipment"));
     box->add(new Equipment("Catering Equipment"));
     box->add(new Equipment("Extra Tools"));
@@ -152,7 +153,8 @@ Team::~Team() {
 
 }
 
-void Team::partChanged(DepartmentOutput* part) {
+void Team::partChanged(DepartmentOutput *part) {
+
     currentCars[0]->removePart(part->getType());
     currentCars[1]->removePart(part->getType());
     DepartmentOutput *part2 = dynamic_cast<DepartmentOutput *>(part->clone());

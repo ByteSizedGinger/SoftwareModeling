@@ -26,7 +26,10 @@ private:
     void pitStop();
 
     void runRace();
+
     void sortDrivers();
+
+    void allocatePoints();
 
 public:
     Race(int l, bool euro, int d, string n, int avgL);

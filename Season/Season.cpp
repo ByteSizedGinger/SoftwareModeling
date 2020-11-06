@@ -129,6 +129,7 @@ RaceIterator* Season::createIterator() {
 
 void Season::upgradeTeamCars() {
 	for (int i = 0; i < numTeams; i++) {
-		teams[i]->upgrade();
-	}
+        cout << teams[i]->getName() << endl;
+        teams[i]->upgrade();
+    }
 }
