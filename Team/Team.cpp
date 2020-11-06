@@ -153,6 +153,13 @@ Team::~Team() {
 }
 
 void Team::partChanged(DepartmentOutput* part) {
+    currentCars[0]->removePart(part->getType());
+    currentCars[1]->removePart(part->getType());
+    DepartmentOutput *part2 = dynamic_cast<DepartmentOutput *>(part->clone());
+    currentCars[0]->addPart(part);
+    currentCars[1]->addPart(part2);
 
 }
+
+
 

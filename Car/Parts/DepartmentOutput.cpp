@@ -49,6 +49,7 @@ void DepartmentOutput::addPart(Car *part) {
 
         }*/
     } else next = part;
+    cout << "Part: " << part->getType() << " added" << endl;
 }
 
 int DepartmentOutput::calculateSpeed() {
