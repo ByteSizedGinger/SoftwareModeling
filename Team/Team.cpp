@@ -102,6 +102,7 @@ void Team::upgrade() {
     cout << "Upgrading car" << endl;
     int u = rand() % 4 + 1;
     if (u == 1) {
+
         departments[0]->createPart(dynamic_cast<DepartmentOutput *>(currentCars[0]));
     } else if (u == 2) {
         departments[1]->createPart(dynamic_cast<DepartmentOutput *>(currentCars[0]));

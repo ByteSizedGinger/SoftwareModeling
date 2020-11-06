@@ -1,4 +1,5 @@
 #include "Team/Department/AerodynamicsFactory.h"
+#include <iostream>
 
 AerodynamicsFactory::AerodynamicsFactory(DepartmentMediator* mediator) : DepartmentFactory(mediator){
     windTokens = 400;
@@ -10,6 +11,7 @@ AerodynamicsFactory::~AerodynamicsFactory(){
 
 void AerodynamicsFactory::createPart(DepartmentOutput* oldPart){
     //create new part
+    cout << "Creating aerodynamic part" << endl;
     Aerodynamics* newPart = new Aerodynamics();
 
     //determine if the part could be better
@@ -19,14 +21,19 @@ void AerodynamicsFactory::createPart(DepartmentOutput* oldPart){
         int windPerformance = windTunnel();
 
         //10% chance that has better wind performance than current part
-        if(windPerformance >= 0 && windPerformance < 10){
+        if (windPerformance >= 0 && windPerformance < 10) {
             //tell other departments that the new part is better, the team will add the part when it is passed to it by: team->partChanged(part);
             mediator->communicate(newPart);
+        } else {
+            //de-allocate part
+            delete newPart;
         }
+    } else {
+        //de-allocate part
+        delete newPart;
     }
 
-    //de-allocate part
-    delete newPart;
+
 }
 
 void AerodynamicsFactory::simulation(){
