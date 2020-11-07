@@ -6,7 +6,7 @@
 using namespace std;
 
 /**
- * @class A class NextSeason which inherits publicly from class Car and is a concreteComponent of the Decorator pattern
+ * @class A class NextSeason which inherits publicly from class Car and is a concreteComponent of the Decorator pattern,Concrete handler in chain of responisibility design pattern
  * @headerfile NextSeason.h "Car/NextSeason/NextSeason.h"
  */
 class NextSeason : public Car {

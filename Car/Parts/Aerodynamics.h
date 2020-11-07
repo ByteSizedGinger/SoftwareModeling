@@ -6,16 +6,34 @@
 #include "Car/Car.h"
 
 using namespace std;
-
+/**
+ * @class
+ * @headerfile
+ */
 class Aerodynamics : public DepartmentOutput {
 
 public:
+    /**
+     *
+     */
     Aerodynamics();
 
+/**
+ *
+ * @return
+ */
     Aerodynamics *cpy();
 
+/**
+ *
+ * @return
+ */
     int getSpeed();
 
+/**
+ *
+ * @return
+ */
     Car *clone();
 
 };

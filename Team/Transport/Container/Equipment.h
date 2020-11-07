@@ -7,14 +7,24 @@
 
 
 using namespace std;
-
-class Equipment : public Container
-{
+/**
+ * @class
+ * @headerfile
+ */
+class Equipment : public Container {
 private:
-    string name;
+    string name;/*! @var */
 public:
-   Equipment(string name);
-   void print();
+    /**
+     *
+     * @param name
+     */
+    Equipment(string name);
+
+    /**
+     *
+     */
+    void print();
 
 };
 

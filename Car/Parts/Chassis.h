@@ -7,15 +7,32 @@
 
 using namespace std;
 
-
+/**
+ *
+ */
 class Chassis : public DepartmentOutput {
 public:
+    /**
+     *
+     */
     Chassis();
 
+/**
+ *
+ * @return
+ */
     Chassis *cpy();
 
+/**
+ *
+ * @return
+ */
     int getSpeed();
 
+/**
+ *
+ * @return
+ */
     Car *clone();
 
 };

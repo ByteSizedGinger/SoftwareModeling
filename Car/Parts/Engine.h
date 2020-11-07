@@ -5,16 +5,33 @@
 #include "Car/Parts/DepartmentOutput.h"
 
 using namespace std;
-
+/**
+ *
+ */
 class Engine : public DepartmentOutput {
 
 public:
+    /**
+     *
+     */
     Engine();
 
+/**
+ *
+ * @return
+ */
     Engine *cpy();
 
+/**
+ *
+ * @return
+ */
     int getSpeed();
 
+/**
+ *
+ * @return
+ */
     Car *clone();
 };
 

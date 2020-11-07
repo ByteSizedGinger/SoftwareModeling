@@ -6,16 +6,34 @@
 #include "Team/Transport/Container/Container.h"
 
 using namespace std;
+/**
+ * @class
+ * @headerfile
+ */
+class Box : public Container {
+private:
+    list<Container *> containers;/*! @var */
+public:
+    /**
+     *
+     */
+    Box();
 
-class Box : public Container
-{
-	private:
-		list<Container*> containers;
-	public:
-		Box();
-		~Box();
-		void add(Container* item);
-		void print();
+    /**
+     *
+     */
+    ~Box();
+
+    /**
+     *
+     * @param item
+     */
+    void add(Container *item);
+
+    /**
+     *
+     */
+    void print();
 };
 
 #endif

@@ -12,31 +12,100 @@
 #include <string>
 
 using namespace std;
-
+/**
+ * @classs
+ * @headerfile
+ */
 class Season {
 
-	private:
-		static Season* singleton;
-		Team** teams;
-		int numTeams;
-		Race** races;
-		int numRaces;
-		Season();
-		void orderTyres();
-		Car **getCars();
-		void displayConstructorsStandings();
-		void displayDriversStandings();
-		void transport(bool european);
-		RaceIterator *createIterator();
-		void upgradeTeamCars();
-		void updateTeamPoints();
+private:
+    static Season *singleton;/*! @var */
+    Team **teams;/*! @var */
+    int numTeams;/*! @var */
+    Race **races;/*! @var */
+    int numRaces;/*! @var */
+    /**
+     *
+     */
+    Season();
 
-	public:
-		static Season instance();
-		~Season();
-		void addTeam(string teamName, string driver1, string driver2);
-		void addRace(int length, bool european, int date, string name, int averageLapTime);
-		void runSeason();
+    /**
+     *
+     */
+    void orderTyres();
+
+    /**
+     *
+     * @return
+     */
+    Car **getCars();
+
+    /**
+     *
+     */
+    void displayConstructorsStandings();
+
+    /**
+     *
+     */
+    void displayDriversStandings();
+
+    /**
+     *
+     * @param european
+     */
+    void transport(bool european);
+
+    /**
+     *
+     * @return
+     */
+    RaceIterator *createIterator();
+
+    /**
+     *
+     */
+    void upgradeTeamCars();
+
+    /**
+     *
+     */
+    void updateTeamPoints();
+
+public:
+    /**
+     *
+     * @return
+     */
+    static Season instance();
+
+    /**
+     *
+     */
+    ~Season();
+
+    /**
+     *
+     * @param teamName
+     * @param driver1
+     * @param driver2
+     */
+    void addTeam(string teamName, string driver1, string driver2);
+
+    /**
+     *
+     * @param length
+     * @param european
+     * @param date
+     * @param name
+     * @param averageLapTime
+     */
+    void addRace(int length, bool european, int date, string name, int averageLapTime);
+
+    /**
+     *
+     */
+    void runSeason();
 };
 
 #endif

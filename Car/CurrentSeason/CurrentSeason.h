@@ -10,7 +10,7 @@
 using namespace std;
 
 /**
- * @class  A class CurrentSeason the inherits publically from car and is the concrete component of the decorator design pattern
+ * @class  A class CurrentSeason the inherits publically from car and is the concrete component of the decorator design pattern,Concrete handler in chain of responisibility design pattern
  * @headerfile CurrentSeason.h "Car/CurrentSeason/CurrentSeason.h"
  */
 class CurrentSeason : public Car {

@@ -10,41 +10,88 @@
 #include "Car/Car.h"
 
 using namespace std;
-
+/**
+ * @class
+ * @headerfile
+ */
 class Race {
 
 private:
-    int laps;
-    bool european;
-    int date;  //date of 1st day of weekend
-    string name;
-    Car **cars;
-    int numCars;
-    int averageLapTime;
-
+    int laps;/*! @var */
+    bool european;/*! @var */
+    int date;  /*! @var */
+    string name;/*! @var */
+    Car **cars;/*! @var */
+    int numCars;/*! @var */
+    int averageLapTime;/*! @var */
+/**
+ *
+ */
     void runFreePractice2();
 
+/**
+ *
+ */
     void runQualifying();
 
+/**
+ *
+ */
     void runFreePractice1();
 
+/**
+ *
+ */
     void pitStop();
 
+/**
+ *
+ */
     void runRace();
 
+/**
+ *
+ */
     void sortDrivers();
 
+/**
+ *
+ */
     void allocatePoints();
 
 public:
+    /**
+     *
+     * @param l
+     * @param euro
+     * @param d
+     * @param n
+     * @param avgL
+     */
     Race(int l, bool euro, int d, string n, int avgL);
 
+/**
+ *
+ */
     void printLeaderBoard();
 
+/**
+ *
+ * @return
+ */
     int getDate();
 
+/**
+ *
+ * @return
+ */
     bool isEuropean();
 
+/**
+ *
+ * @param c
+ * @param num
+ */
     void runRaceWeekend(Car **c, int num);
 };
 

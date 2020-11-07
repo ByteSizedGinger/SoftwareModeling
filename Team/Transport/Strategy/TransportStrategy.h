@@ -5,12 +5,23 @@
 #include "Team/Transport/Container/Container.h"
 
 using namespace std;
-
+/**
+ * @class
+ * @headerfile
+ */
 class TransportStrategy {
 
 public:
-TransportStrategy();
-virtual void transport(Container* container)=0;
+    /**
+     *
+     */
+    TransportStrategy();
+
+/**
+ *
+ * @param container
+ */
+    virtual void transport(Container *container) = 0;
 };
 
 #endif

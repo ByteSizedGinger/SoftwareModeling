@@ -11,43 +11,89 @@
 
 class DepartmentFactory;
 class DepartmentMediator;
-
+/**
+ * @class
+ * @headerfile
+ */
 class Team {
 
 private:
-    Car **currentCars;
-    Container *container;
-    TransportStrategy *transportStrategy;
-    DepartmentFactory **departments;
-    string name;
-    DepartmentMediator *mediator;
-    int constructorPoints;
-    Car *nextSeasonCar;
+    Car **currentCars;/*! @var */
+    Container *container;/*! @var */
+    TransportStrategy *transportStrategy;/*! @var */
+    DepartmentFactory **departments;/*! @var */
+    string name;/*! @var */
+    DepartmentMediator *mediator;/*! @var */
+    int constructorPoints;/*! @var */
+    Car *nextSeasonCar;/*! @var */
 
 public:
-
+/**
+ *
+ * @param string_name
+ * @param driver1Name
+ * @param driver2Name
+ */
     Team(string string_name, string driver1Name, string driver2Name);
 
+/**
+ *
+ */
     ~Team();
 
+/**
+ *
+ */
     void transport();
 
+/**
+ *
+ */
     void orderTyres();
 
+/**
+ *
+ * @return
+ */
     Car **getCurrentSeasonCars();
 
+/**
+ *
+ */
     void setEuropeanStrategy();
 
+/**
+ *
+ */
     void setNonEuropeanStrategy();
 
+/**
+ *
+ * @return
+ */
     string getName();
 
+/**
+ *
+ * @param part
+ * @param season
+ */
     void partChanged(DepartmentOutput* part, string season);
 
+/**
+ *
+ */
     void updatePoints();
 
+/**
+ *
+ */
     void upgrade();
 
+/**
+ *
+ * @return
+ */
     int getConstructorPoints();
 
 

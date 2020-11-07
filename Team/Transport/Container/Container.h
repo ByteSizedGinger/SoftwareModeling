@@ -5,16 +5,40 @@
 
 
 using namespace std;
-
+/**
+ * @class
+ * @headerfile
+ */
 class Container {
 private:
-   bool isBox;
+    bool isBox;/*! @var */
 public:
-   Container();
-   virtual ~Container();
-   virtual void print() = 0;
-   void setIsBox(bool b);
-   bool getIsBox();
+    /**
+     *
+     */
+    Container();
+
+    /**
+     *
+     */
+    virtual ~Container();
+
+    /**
+     *
+     */
+    virtual void print() = 0;
+
+    /**
+     *
+     * @param b
+     */
+    void setIsBox(bool b);
+
+    /**
+     *
+     * @return
+     */
+    bool getIsBox();
 
 
 };

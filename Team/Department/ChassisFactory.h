@@ -7,22 +7,48 @@
 
 #include <string>
 using namespace std;
-
-class ChassisFactory : public DepartmentFactory{
+/**
+ * @class
+ * @headerfile
+ */
+class ChassisFactory : public DepartmentFactory {
 private:
 
 
 public:
-    ChassisFactory(DepartmentMediator* mediator);
+    /**
+     *
+     * @param mediator
+     */
+    ChassisFactory(DepartmentMediator *mediator);
 
+/**
+ *
+ */
     ~ChassisFactory();
 
+/**
+ *
+ * @param oldPart
+ * @param season
+ */
     void createPart(DepartmentOutput* oldPart,string season);
 
+/**
+ *
+ */
     void simulation();
 
+/**
+ *
+ * @param part
+ */
     void otherPartChanged(DepartmentOutput* part);
 
+/**
+ *
+ * @return
+ */
     string getType();
 };
 

@@ -6,27 +6,60 @@
 #include "Car/Parts/Aerodynamics.h"
 
 using namespace std;
-
+/**
+ * @class
+ * @headerfile
+ */
 class AerodynamicsFactory : public DepartmentFactory {
 private:
-    int windTokens;
-    int windTunnel();
+    int windTokens;/*! @var */
+    int windTunnel();/*! @var */
 
 public:
-    AerodynamicsFactory(DepartmentMediator* mediator);
+    /**
+     *
+     * @param mediator
+     */
+    AerodynamicsFactory(DepartmentMediator *mediator);
 
+/**
+ *
+ */
     ~AerodynamicsFactory();
 
+/**
+ *
+ * @param oldPart
+ * @param season
+ */
     void createPart(DepartmentOutput* oldPart,string season);
 
+/**
+ *
+ */
     void simulation();
 
+/**
+ *
+ * @param part
+ */
     void otherPartChanged(DepartmentOutput* part);
 
+/**
+ *
+ * @return
+ */
     int getTunnelTokens();
 
+/**
+ *
+ */
     void decreaseTunnelTokens();
 
+/**
+ *
+ * @return
+ */
     string getType();
 };
 

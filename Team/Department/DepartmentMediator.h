@@ -11,20 +11,39 @@ using namespace std;
 
 class DepartmentFactory;
 class Team;
-
+/**
+ * @class
+ * @headerfile
+ */
 class DepartmentMediator {
 private:
-    int currentDepartment;
-    DepartmentFactory** departments;
-    Team* team;
+    int currentDepartment;/*! @var */
+    DepartmentFactory **departments;/*! @var */
+    Team *team;/*! @var */
 
 public:
-    DepartmentMediator(Team* team);
+    /**
+     *
+     * @param team
+     */
+    DepartmentMediator(Team *team);
 
+/**
+ *
+ */
     ~DepartmentMediator();
 
+/**
+ *
+ * @param part
+ * @param season
+ */
     void communicate(DepartmentOutput* part,string season);
 
+/**
+ *
+ * @param department
+ */
     void attachDepartment(DepartmentFactory* department);
 
 
