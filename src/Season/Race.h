@@ -95,7 +95,7 @@ public:
     void runRaceWeekend(Car **c, int num);
 
 /**
-*
+*@return
 */
     string getName();
 };

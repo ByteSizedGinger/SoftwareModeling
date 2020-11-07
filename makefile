@@ -1,5 +1,8 @@
-main: */*.cpp */*/*.cpp */*/*/*.cpp */*.h */*/*.h */*/*/*.h main.cpp
-	g++ */*.cpp */*/*.cpp */*/*/*.cpp */*.h */*/*.h */*/*/*.h main.cpp -o main -I .
+main: src/*/*.cpp src/*/*/*.cpp src/*/*/*/*.cpp src/*/*.h src/*/*/*.h src/*/*/*/*.h src/main.cpp
+	g++ src/*/*.cpp src/*/*/*.cpp src/*/*/*/*.cpp src/main.cpp -o bin/main -I src
 	
 run:
-	./main
+	./bin/main
+
+doc: src/*/*.cpp src/*/*/*.cpp src/*/*/*/*.cpp src/*/*.h src/*/*/*.h src/*/*/*/*.h src/main.cpp
+	doxygen doc/Doxyfile
