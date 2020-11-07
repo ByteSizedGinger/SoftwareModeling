@@ -2,25 +2,62 @@
 #define DRIVER_H
 
 #include <string>
+
 using namespace std;
 
-class Driver{
+/**
+ * A class Driver that holds all the information for a formula one driver
+ */
+class Driver {
 
 private:
-	string name;
-	int points;
-	int performance;
+    string name; /*! @var a private variable that holds the name of the driver */
+    int points; /*! @var a private varibale that holds the drivers championship points for the season */
+    int performance; /*! @var a private variable that holds the drivers performance */
 
 public:
-	Driver(string);
-	string getDriver();
-	int getPerformance();
-	void setPerformance(int p);
-	int getPoints();
-	void setPoints(int p);
+    /**
+     * A constructor that takes in the drivers name as a parameter
+     * @param n The drivers name
+     */
+    Driver(string n);
 
+    /**
+     * A function to get the drivers name
+     * @return returns drivers name
+     */
+    string getDriver();
+
+    /**
+     * Function to get the performance variable
+     * @return perfromance variable
+     */
+    int getPerformance();
+
+    /**
+     * Function to set the performance varaible
+     * @param p new performance variable
+     */
+    void setPerformance(int p);
+
+    /**
+     * Function to get the drivers championship points
+     * @return points
+     */
+    int getPoints();
+
+    /**
+     * Function to set points to p
+     * @param p new points
+     */
+    void setPoints(int p);
+
+    /**
+     * Function to get drivers name
+     * @return drivers name
+     */
     string getName();
-	
+
 };
 
 #endif
