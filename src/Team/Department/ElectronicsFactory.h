@@ -12,7 +12,6 @@ using namespace std;
  */
 class ElectronicsFactory : public DepartmentFactory {
 private:
-    int windTokens;/*! @var */
 
 public:
     /**
