@@ -17,7 +17,7 @@ using namespace std;
 class Race {
 
 private:
-    int laps;/*! @var */
+    int laps;/*! @var  */
     bool european;/*! @var */
     int date;  /*! @var */
     string name;/*! @var */
