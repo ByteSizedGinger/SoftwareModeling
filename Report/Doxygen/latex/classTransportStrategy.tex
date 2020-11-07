@@ -2,14 +2,32 @@
 \label{classTransportStrategy}\index{Transport\+Strategy@{Transport\+Strategy}}
 
 
+{\ttfamily \#include \char`\"{}Team/\+Transport/\+Strategy/\+Transport\+Strategy.\+h\char`\"{}}
+
+
+
 Inheritance diagram for Transport\+Strategy\+:
 % FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classTransportStrategy_a671ad3b1ff9163b4c18bddae2484a6d1}{Transport\+Strategy} ()
+\item 
 virtual void \hyperlink{classTransportStrategy_ab5659f9d5d352ba0a23f1e99edd3d488}{transport} (\hyperlink{classContainer}{Container} $\ast$container)=0
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The Strategy participant of the Strategy design pattern. Base class for several strategies of transporting items to races. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTransportStrategy_a671ad3b1ff9163b4c18bddae2484a6d1}\label{classTransportStrategy_a671ad3b1ff9163b4c18bddae2484a6d1}} 
+\index{Transport\+Strategy@{Transport\+Strategy}!Transport\+Strategy@{Transport\+Strategy}}
+\index{Transport\+Strategy@{Transport\+Strategy}!Transport\+Strategy@{Transport\+Strategy}}
+\subsubsection{\texorpdfstring{Transport\+Strategy()}{TransportStrategy()}}
+{\footnotesize\ttfamily Transport\+Strategy\+::\+Transport\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classTransportStrategy_ab5659f9d5d352ba0a23f1e99edd3d488}\label{classTransportStrategy_ab5659f9d5d352ba0a23f1e99edd3d488}} 
@@ -18,9 +36,9 @@ virtual void \hyperlink{classTransportStrategy_ab5659f9d5d352ba0a23f1e99edd3d488
 \subsubsection{\texorpdfstring{transport()}{transport()}}
 {\footnotesize\ttfamily virtual void Transport\+Strategy\+::transport (\begin{DoxyParamCaption}\item[{\hyperlink{classContainer}{Container} $\ast$}]{container }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-
+Pure virtual function for transporting items. 
 \begin{DoxyParams}{Parameters}
-{\em container} & \\
+{\em container} & The container to be transported. \\
 \hline
 \end{DoxyParams}
 

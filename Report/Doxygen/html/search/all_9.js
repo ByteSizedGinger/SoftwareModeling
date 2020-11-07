@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nextseason',['NextSeason',['../classNextSeason.html',1,'NextSeason'],['../classNextSeason.html#a6a1b6579836f99504740c84b10a407aa',1,'NextSeason::NextSeason()']]]
+  ['medium',['Medium',['../classMedium.html',1,'Medium'],['../classMedium.html#a9dfadab5a1a69868f5add5f36d8e72c2',1,'Medium::Medium()']]]
 ];

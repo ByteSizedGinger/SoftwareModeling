@@ -2,6 +2,10 @@
 \label{classAerodynamics}\index{Aerodynamics@{Aerodynamics}}
 
 
+{\ttfamily \#include \char`\"{}Car/\+Parts/\+Aerodynamics.\+h\char`\"{}}
+
+
+
 Inheritance diagram for Aerodynamics\+:
 % FIG 0
 
@@ -21,6 +25,9 @@ int \hyperlink{classAerodynamics_aeee4abded0da2a826af0f3a4c0cdf991}{get\+Speed} 
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+\hyperlink{classA}{A} class \hyperlink{classAerodynamics}{Aerodynamics} that is a concrete\+Decorator of the decorator design pattern,concrete\+Product of the Factory method 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classAerodynamics_a36c7ae850ce18605cdbf3ce1709d8e54}\label{classAerodynamics_a36c7ae850ce18605cdbf3ce1709d8e54}} 

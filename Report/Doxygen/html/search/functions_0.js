@@ -8,5 +8,6 @@ var searchData=
   ['addtyres',['addTyres',['../classCar.html#a5c5f22cb9232b88a53a4ffc324824aa1',1,'Car::addTyres()'],['../classCurrentSeason.html#a62e6e6c10c5490084230d4c3722196e5',1,'CurrentSeason::addTyres()'],['../classDepartmentOutput.html#a7f231762cf94d1f18a2e7bb3290afbda',1,'DepartmentOutput::addTyres()']]],
   ['aerodynamics',['Aerodynamics',['../classAerodynamics.html#a36c7ae850ce18605cdbf3ce1709d8e54',1,'Aerodynamics']]],
   ['aerodynamicsfactory',['AerodynamicsFactory',['../classAerodynamicsFactory.html#a46f12bf52bad9b98d19f6dcd3a04c384',1,'AerodynamicsFactory']]],
+  ['allocatepoints',['allocatePoints',['../classRace.html#abed9e74190e4eb7bdb76883659c4b345',1,'Race']]],
   ['attachdepartment',['attachDepartment',['../classDepartmentMediator.html#a24fa0b87c5dbcbf2868e062d599b49e3',1,'DepartmentMediator']]]
 ];

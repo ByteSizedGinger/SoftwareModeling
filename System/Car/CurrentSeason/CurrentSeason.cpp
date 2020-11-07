@@ -85,6 +85,7 @@ void CurrentSeason::addTyres(Tyre** t, int num) {
 }
 
 void CurrentSeason::popOldTyre() {
+    delete tyres.front();
     tyres.pop();
 }
 

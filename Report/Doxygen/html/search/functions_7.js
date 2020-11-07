@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['medium',['Medium',['../classMedium.html#a9dfadab5a1a69868f5add5f36d8e72c2',1,'Medium']]]
+  ['hard',['Hard',['../classHard.html#adcaa89711149600a6fb45f8a75422bac',1,'Hard']]]
 ];

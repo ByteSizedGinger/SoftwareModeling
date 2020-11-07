@@ -6,7 +6,7 @@
 
 using namespace std;
 /**
- *@class A class Engine that is a concreteDecorator of the decorator design pattern,concreteProduct of the Factory method
+ * A class Engine that is a concreteDecorator of the decorator design pattern,concreteProduct of the Factory method
  *@headerfile Engine.h "Car/Parts/Engine.h"
  */
 class Engine : public DepartmentOutput {

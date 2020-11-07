@@ -8,7 +8,8 @@
 #include <string>
 using namespace std;
 /**
- *
+ * The class that represents the Electronics Department. This department produces the Electronics part.
+ * @headerfile ElectronicsFactory.h "Team/Department/ElectronicsFactory.h"
  */
 class ElectronicsFactory : public DepartmentFactory {
 private:
@@ -16,7 +17,7 @@ private:
 public:
     /**
      *
-     * @param mediator
+     * @param mediator The mediator to which this factory must be attached.
      */
     ElectronicsFactory(DepartmentMediator *mediator);
 
@@ -27,25 +28,26 @@ public:
 
 /**
  *
- * @param oldPart
- * @param season
+ * @param oldPart The entry point to the decorated Car object to which to add a new part
+ * @param season A string that is either "current" or "next" to indicate which season the car is for
  */
     void createPart(DepartmentOutput* oldPart, string season);
 
 /**
- *
+ * Run a simulation to test the electronics, so the driver becomes familiar with the controls.
  */
     void simulation();
 
 /**
  *
- * @param part
+ * @param part The part that has just been added to the car. This function lets all other departments know that
+ * this part has been added.
  */
     void otherPartChanged(DepartmentOutput* part);
 
 /**
  *
- * @return
+ * @return The type of department which is "Electronics" in this case.
  */
     string getType();
 };
