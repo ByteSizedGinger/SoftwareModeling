@@ -2,7 +2,8 @@
 #define SOFT_H
 #include "Tyre.h"
 /**
- *Soft class. Inherits publically from tyre and implements the primitive operation getPerformance for the template method
+ * @class Soft class. Inherits publically from tyre and implements the primitive operation getPerformance for the template method
+ * @headerfile Soft.h "Car/CurrentSeason/Tyre/Soft.h"
  */
 class Soft : public Tyre {
 

@@ -2,7 +2,8 @@
 #define MEDIUM_H
 #include "Tyre.h"
 /**
- *Medium class. Inherits publically from tyre and implements the primitive operation getPerformance for the template method
+ *@class Medium class. Inherits publically from tyre and implements the primitive operation getPerformance for the template method
+ * @headerfile Medium.h "Car/CurrentSeason/Tyre/Medium.h"
  */
 class Medium : public Tyre {
 

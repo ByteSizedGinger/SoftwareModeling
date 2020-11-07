@@ -2,7 +2,8 @@
 #define HARD_H
 #include "Tyre.h"
 /**
- * Hard class. Inherits publically from tyre and implements the primitive operation getPerformance for the templaet method
+ * @class Hard class. Inherits publicly from tyre and implements the primitive operation getPerformance for the template method
+ * @headerfile Hard.h "Car/CurrentSeason/Tyre/Hard.h"
  */
 class Hard : public Tyre {
 

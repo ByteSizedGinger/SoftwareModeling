@@ -1,7 +1,8 @@
 #ifndef TYRE_H
 #define TYRE_H
 /**
- *Tyre class. Abstract class in the template method implements the template method calculate speed
+ * @class Tyre class. Abstract class in the template method implements the template method calculate speed
+ * @headerfile Tyre.h "Car/CurrentSeason/Tyre/Tyre.h"
  */
 class Tyre {
 

@@ -6,7 +6,8 @@
 using namespace std;
 
 /**
- * A class Driver that holds all the information for a formula one driver
+ * @class A class Driver that holds all the information for a formula one driver
+ * @headerfile Driver.h "Car/CurrentSeason/Driver.h"
  */
 class Driver {
 
