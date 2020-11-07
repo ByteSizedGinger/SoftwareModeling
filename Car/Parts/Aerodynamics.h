@@ -7,32 +7,33 @@
 
 using namespace std;
 /**
- * @class
- * @headerfile
+ * @class A class Aerodynamics that is a concreteDecorator of the decorator design pattern,concreteProduct of the Factory method
+ * @headerfile Aerodynamics.h "Car/Parts/Aerodynamics.h"
  */
 class Aerodynamics : public DepartmentOutput {
 
 public:
     /**
-     *
+     *Constructor to create an Aerodynamics object
      */
     Aerodynamics();
 
 /**
- *
- * @return
+ *Helper function used in cloning
+ * @return Aerodynamics pointer
  */
     Aerodynamics *cpy();
 
 /**
- *
- * @return
+ *Returns the speed of an Aerodynamics object
+ * @return int the speed
  */
     int getSpeed();
 
 /**
- *
- * @return
+ *Clones the objects variables
+ * @return a Aerodynamics object
+ * method of the prototype design pattern
  */
     Car *clone();
 

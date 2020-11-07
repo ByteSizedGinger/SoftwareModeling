@@ -31,7 +31,7 @@ public:
     virtual int getPoints();
 
 /**
- * Goes doen chain till it finds a current season car to handle request of adding points to driver object
+ * Goes down chain till it finds a current season car to handle request of adding points to driver object
  * @param p points to be added
  */
     virtual void addPoints(int p);

@@ -7,17 +7,17 @@
 
 using namespace std;
 /**
- * @class
- * @headerfile
+ * @class A class DepartmentOutput Decorator partcipant of the decorator design pattern,concreteHandler of the chain of responsibilities design pattern,Product of the factory method design pattern
+ * @headerfile DepartmentOutput.h "Car/Parts/DepartmentOutput.h"
  */
 class DepartmentOutput : public Car {
 protected:
-    int speed;/*! @var */
-    string type;/*! @var */
-    Car *next;/*! @var */
+    int speed;/*! @var protected attribute speed of part */
+    string type;/*! @var protected attribute the name of the type of part*/
+    Car *next;/*! @var protected attribute points to the component of the decorator design pattern*/
 public:
     /**
-     *
+     *Constructor creates a departmentoutput object
      */
     DepartmentOutput();
 
