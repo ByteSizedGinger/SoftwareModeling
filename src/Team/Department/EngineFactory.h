@@ -13,7 +13,6 @@ using namespace std;
  */
 class EngineFactory : public DepartmentFactory {
 private:
-    int windTokens;/*! @var */
 
 public:
     /**
