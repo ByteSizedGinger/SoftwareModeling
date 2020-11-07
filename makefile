@@ -1,4 +1,4 @@
-main: src/*/*.cpp src/*/*/*.cpp src/*/*/*/*.cpp src/*/*.h src/*/*/*.h src/*/*/*/*.h src/main.cpp
+bin/main: src/*/*.cpp src/*/*/*.cpp src/*/*/*/*.cpp src/*/*.h src/*/*/*.h src/*/*/*/*.h src/main.cpp
 	g++ src/*/*.cpp src/*/*/*.cpp src/*/*/*/*.cpp src/main.cpp -o bin/main -I src
 	
 run:
