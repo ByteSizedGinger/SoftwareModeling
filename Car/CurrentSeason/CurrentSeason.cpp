@@ -20,7 +20,7 @@ void CurrentSeason::addPoints(int p){
 void CurrentSeason::simulate() {    // each call of this function has on average 10% chance to increase performance by 1
     int improvement = 0;
     for (int j = 0; j < 5; j++) {
-        int i = (rand() % 15 + 1);
+        int i = (rand() % 30 + 1);
         switch (i) {
             case 1:
                 improvement++;

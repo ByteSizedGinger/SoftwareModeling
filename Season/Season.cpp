@@ -49,9 +49,8 @@ void Season::addRace(int length, bool european, int date, string name, int avera
 }
 
 void Season::runSeason() {
-	int upgradesBlockedUntil = 0; //cannot do upgrades if we are before this date
+	bool upgradesBlocked = false;
 	bool workOnCurrentCar = true;
-	bool workOnNextCar = false;
 	cout << endl << "The season has started" << endl;
 	for (int date = 1; date <= 365; date++) {
 		cout << GREEN << "Day " << date << RESET << endl;
@@ -60,32 +59,42 @@ void Season::runSeason() {
 			Race* race = it->currentItem();
 
 			if ((!race->isEuropean() && race->getDate()-90 == date) || (date == 1 && !race->isEuropean() && race->getDate()-90 == date)) {
+				cout << "Transporting items to the " << race->getName() << ":" << endl;
 				transport(false);
 			} else if ((race->isEuropean() && race->getDate()-7 == date) || (date == 1 && race->isEuropean() && race->getDate()-7 < date)) {
+				cout << "Transporting items to the " << race->getName() << ":" << endl;
 				transport(true);
 			}
 			
 			if (race->getDate()-30 == date || (date == 1 && race->getDate()-30 < date)) {
+				cout << "Ordering tyres for the " << race->getName() << ":" << endl;
 				orderTyres();
 			}
 
-			if (race->getDate() == date) {
+			if (race->getDate()-1 == date) {
+				cout << "All teams have flown their cars from the factory to the race" << endl;
+				upgradesBlocked = true;
+			} else if (race->getDate() == date) {
 				race->runRaceWeekend(getCars(), numTeams*2);
+				date += 2;
 				updateTeamPoints();
 				displayDriversStandings();
 				cout << endl;
 				displayConstructorsStandings();
-				upgradesBlockedUntil = date+2;
-				//cannot do upgrades today (date+0), tomorrow (date+1) or the next day (date+2).
-				//can do upgrades the following day (date+3)
+				if (race == races[numRaces-1]) {
+					workOnCurrentCar = false;
+				}
+			} else if (race->getDate()+4 == date) {
+				cout << "All teams have flown their cars back to the factory for upgrades" << endl;
+				upgradesBlocked = false;
 			}
 		}
 		delete it;
-		if (workOnCurrentCar && upgradesBlockedUntil < date) {
+		if (workOnCurrentCar && !upgradesBlocked) {
 			upgradeAndSimulate(false);
 		}
 
-		if (workOnNextCar) {
+		if (date > 180) {
 			upgradeAndSimulate(true);
 		}
 	}

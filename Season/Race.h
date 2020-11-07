@@ -93,6 +93,11 @@ public:
  * @param num
  */
     void runRaceWeekend(Car **c, int num);
+
+/**
+*
+*/
+    string getName();
 };
 
 #endif

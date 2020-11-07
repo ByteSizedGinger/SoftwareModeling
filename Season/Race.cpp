@@ -180,4 +180,6 @@ void Race::allocatePoints() {
 
 }
 
-
+string Race::getName() {
+    return name;
+}
