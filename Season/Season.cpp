@@ -50,6 +50,8 @@ void Season::addRace(int length, bool european, int date, string name, int avera
 
 void Season::runSeason() {
 	int upgradesBlockedUntil = 0; //cannot do upgrades if we are before this date
+	bool workOnCurrentCar = true;
+	bool workOnNextCar = false;
 	cout << endl << "The season has started" << endl;
 	for (int date = 1; date <= 365; date++) {
 		cout << GREEN << "Day " << date << RESET << endl;
@@ -79,9 +81,12 @@ void Season::runSeason() {
 			}
 		}
 		delete it;
+		if (workOnCurrentCar && upgradesBlockedUntil < date) {
+			upgradeAndSimulate(false);
+		}
 
-		if (upgradesBlockedUntil < date) {
-			upgradeTeamCars();
+		if (workOnNextCar) {
+			upgradeAndSimulate(true);
 		}
 	}
 	cout << RED << "Final Standings:" << RESET << endl;
@@ -153,10 +158,14 @@ RaceIterator* Season::createIterator() {
 	return new RaceIterator(races, numRaces);
 }
 
-void Season::upgradeTeamCars() {
+void Season::upgradeAndSimulate(bool nextSeason) {
 	for (int i = 0; i < numTeams; i++) {
         //cout << teams[i]->getName() << endl;
-        teams[i]->upgrade();
+		if (nextSeason) {
+			teams[i]->upgradeNextSeason();
+		} else {
+       		teams[i]->upgradeAndSimulate();
+		}
     }
 }
 

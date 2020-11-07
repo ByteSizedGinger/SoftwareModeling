@@ -88,8 +88,12 @@ public:
 /**
  *
  */
-    void upgrade();
+    void upgradeAndSimulate();
 
+/**
+ *
+ */
+    void upgradeNextSeason();
 /**
  *
  * @return

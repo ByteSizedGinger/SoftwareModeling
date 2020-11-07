@@ -11,7 +11,7 @@ using namespace std;
  */
 class Car {
 protected:
-    int averageSpeed; /*! @var a protected varaible that holds the cars average speed */
+   // int averageSpeed; /*! @var a protected varaible that holds the cars average speed */
 
 public:
     /**

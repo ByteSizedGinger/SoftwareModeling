@@ -134,7 +134,7 @@ string Team::getName() {
     return name;
 }
 
-void Team::upgrade() {
+void Team::upgradeAndSimulate() {
     //cout << "Upgrading car" << endl;
     int u = rand() % 4 + 1;
      
@@ -149,7 +149,16 @@ void Team::upgrade() {
         departments[3]->createPart(dynamic_cast<DepartmentOutput *>(currentCars[0]),"current");
     }
 
-     u = rand() % 4 + 1;
+     
+
+    currentCars[0]->simulate();
+    currentCars[1]->simulate();
+
+
+}
+
+void Team::upgradeNextSeason() {
+    int u = rand() % 4 + 1;
      
     if (u == 1) {
 
@@ -161,8 +170,6 @@ void Team::upgrade() {
     } else {
         departments[3]->createPart(dynamic_cast<DepartmentOutput *>(nextSeasonCar),"next");
     }
-
-
 }
 
 int Team::getConstructorPoints() {

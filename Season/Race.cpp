@@ -27,8 +27,8 @@ void Race::runRace() {
              int speed=cars[j]->calculateSpeed();
              Tyre* t = cars[j]->currentTyre();
 
-            int time = rand() % 5 +t->calculateSpeed(speed);
-            cars[j]->incrementRaceTime(time);
+            double time = rand() % 5 + 1000000.0/t->calculateSpeed(speed);
+            cars[j]->incrementRaceTime((int) time);
             
         }
         if(i==halfway){
@@ -60,9 +60,8 @@ void Race::runQualifying() {
             int speed=cars[j]->calculateSpeed();
              Tyre* t = cars[j]->currentTyre();
 
-            int time = rand() % 20 +t->calculateSpeed(speed);
-         
-            cars[j]->incrementRaceTime(time);
+            double time = rand() % 20 + 1000000.0/t->calculateSpeed(speed);
+            cars[j]->incrementRaceTime((int) time);
         }
     }
     for(int i=0;i<numCars;i++){
@@ -84,9 +83,9 @@ void Race::runFreePractice1() {
         int speed=cars[j]->calculateSpeed();
              Tyre* t = cars[j]->currentTyre();
 
-            int time = rand() % 80 +t->calculateSpeed(speed);
+        double time = rand() % 80 + 1000000.0/t->calculateSpeed(speed);
+        cars[j]->incrementRaceTime((int) time);
         cars[j]->popOldTyre();
-        cars[j]->incrementRaceTime(time);
     }
 
     cout << "Free practice 1 results: " << RESET << endl;
@@ -119,12 +118,12 @@ void Race::runFreePractice2() {
     }
 
     for (int j = 0; j < numCars; ++j) {
-            int speed=cars[j]->calculateSpeed();
-            Tyre* t = cars[j]->currentTyre();
+        int speed=cars[j]->calculateSpeed();
+        Tyre* t = cars[j]->currentTyre();
 
-            int time = rand() % 60 +t->calculateSpeed(speed);
-       cars[j]->popOldTyre();
-        cars[j]->incrementRaceTime(time);
+        double time = rand() % 60 + 1000000.0/t->calculateSpeed(speed);
+        cars[j]->incrementRaceTime((int) time);
+        cars[j]->popOldTyre();
     }
 
     cout << "Free practice 2 results: " << RESET << endl;

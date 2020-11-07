@@ -8,7 +8,7 @@ using namespace std;
 DepartmentOutput::DepartmentOutput() {
     next = nullptr;
     type = "";
-    averageSpeed = 0;
+    //averageSpeed = 0;
 }
 
 Car* DepartmentOutput::removePart(string part) {
@@ -50,7 +50,7 @@ void DepartmentOutput::addPart(Car *part) {
 }
 
 int DepartmentOutput::calculateSpeed() {
-    averageSpeed = 0;
+    int averageSpeed = 0;
     int s = this->getSpeed();
 
     int rtrn;

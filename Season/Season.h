@@ -65,7 +65,7 @@ private:
     /**
      *
      */
-    void upgradeTeamCars();
+    void upgradeAndSimulate(bool nextSeason);
 
     /**
      *
