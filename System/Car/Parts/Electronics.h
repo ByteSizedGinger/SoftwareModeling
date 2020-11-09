@@ -7,7 +7,7 @@
 
 using namespace std;
 /**
- *@class A class Electronics that is a concreteDecorator of the decorator design pattern,concreteProduct of the Factory method
+ * A class Electronics that is a concreteDecorator of the decorator design pattern,concreteProduct of the Factory method
  * @headerfile Electronics.h "Car/Parts/Electronics.h"
  */
 class Electronics : public DepartmentOutput {

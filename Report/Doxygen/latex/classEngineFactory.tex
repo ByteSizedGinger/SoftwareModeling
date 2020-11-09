@@ -2,6 +2,10 @@
 \label{classEngineFactory}\index{Engine\+Factory@{Engine\+Factory}}
 
 
+{\ttfamily \#include \char`\"{}Team/\+Department/\+Engine\+Factory.\+h\char`\"{}}
+
+
+
 Inheritance diagram for Engine\+Factory\+:
 % FIG 0
 
@@ -15,8 +19,7 @@ Collaboration diagram for Engine\+Factory\+:
 \item 
 void \hyperlink{classEngineFactory_af8c2f4bf420b5d2f0742b3d38746cf40}{create\+Part} (\hyperlink{classDepartmentOutput}{Department\+Output} $\ast$old\+Part, string season)
 \item 
-\mbox{\Hypertarget{classEngineFactory_abcc2b59253cefc7f902a47b19273cf76}\label{classEngineFactory_abcc2b59253cefc7f902a47b19273cf76}} 
-void {\bfseries simulation} ()
+void \hyperlink{classEngineFactory_abcc2b59253cefc7f902a47b19273cf76}{simulation} ()
 \item 
 void \hyperlink{classEngineFactory_a12c1223834cb2d653a1c659aa1504c51}{other\+Part\+Changed} (\hyperlink{classDepartmentOutput}{Department\+Output} $\ast$part)
 \item 
@@ -24,6 +27,9 @@ string \hyperlink{classEngineFactory_a52fd49ea32ab2dc62aa8c86e058fb138}{get\+Typ
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+The class that represents the \hyperlink{classEngine}{Engine} Department. This department produces the \hyperlink{classEngine}{Engine} part. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classEngineFactory_aa056855d16da0ce042a66042860b5ae8}\label{classEngineFactory_aa056855d16da0ce042a66042860b5ae8}} 
@@ -34,7 +40,7 @@ string \hyperlink{classEngineFactory_a52fd49ea32ab2dc62aa8c86e058fb138}{get\+Typ
 
 
 \begin{DoxyParams}{Parameters}
-{\em mediator} & \\
+{\em mediator} & The mediator to which this factory must be attached. \\
 \hline
 \end{DoxyParams}
 
@@ -48,9 +54,9 @@ string \hyperlink{classEngineFactory_a52fd49ea32ab2dc62aa8c86e058fb138}{get\+Typ
 
 
 \begin{DoxyParams}{Parameters}
-{\em old\+Part} & \\
+{\em old\+Part} & The entry point to the decorated \hyperlink{classCar}{Car} object to which to add a new part \\
 \hline
-{\em season} & \\
+{\em season} & \hyperlink{classA}{A} string that is either \char`\"{}current\char`\"{} or \char`\"{}next\char`\"{} to indicate which season the car is for \\
 \hline
 \end{DoxyParams}
 
@@ -64,7 +70,7 @@ Implements \hyperlink{classDepartmentFactory_a6080a560efb9fe0b9c870db5a7358886}{
 {\footnotesize\ttfamily string Engine\+Factory\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 \begin{DoxyReturn}{Returns}
-
+The type of department which is \char`\"{}\+Engine\char`\"{} in this case. 
 \end{DoxyReturn}
 
 
@@ -78,12 +84,22 @@ Implements \hyperlink{classDepartmentFactory_a5aac775b89c4c390ad885e1de8947b0d}{
 
 
 \begin{DoxyParams}{Parameters}
-{\em part} & \\
+{\em part} & The part that has just been added to the car. This function lets all other departments know that this part has been added. \\
 \hline
 \end{DoxyParams}
 
 
 Implements \hyperlink{classDepartmentFactory_a41e5c96ee84f8237cb08d31cd782efae}{Department\+Factory}.
+
+\mbox{\Hypertarget{classEngineFactory_abcc2b59253cefc7f902a47b19273cf76}\label{classEngineFactory_abcc2b59253cefc7f902a47b19273cf76}} 
+\index{Engine\+Factory@{Engine\+Factory}!simulation@{simulation}}
+\index{simulation@{simulation}!Engine\+Factory@{Engine\+Factory}}
+\subsubsection{\texorpdfstring{simulation()}{simulation()}}
+{\footnotesize\ttfamily void Engine\+Factory\+::simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Run a simulation to allow the driver to adjust to the weight distribution of the \hyperlink{classEngine}{Engine}. 
+
+Implements \hyperlink{classDepartmentFactory_ad7360e63135822e44031053723ff95fc}{Department\+Factory}.
 
 
 

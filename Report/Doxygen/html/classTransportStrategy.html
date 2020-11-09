@@ -65,6 +65,8 @@ $(function() {
 <div class="title">TransportStrategy Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &quot;<a class="el" href="TransportStrategy_8h_source.html">Team/Transport/Strategy/TransportStrategy.h</a>&quot;</code></p>
 <div class="dynheader">
 Inheritance diagram for TransportStrategy:</div>
 <div class="dyncontent">
@@ -74,9 +76,32 @@ Inheritance diagram for TransportStrategy:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a671ad3b1ff9163b4c18bddae2484a6d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransportStrategy.html#a671ad3b1ff9163b4c18bddae2484a6d1">TransportStrategy</a> ()</td></tr>
+<tr class="separator:a671ad3b1ff9163b4c18bddae2484a6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5659f9d5d352ba0a23f1e99edd3d488"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransportStrategy.html#ab5659f9d5d352ba0a23f1e99edd3d488">transport</a> (<a class="el" href="classContainer.html">Container</a> *container)=0</td></tr>
 <tr class="separator:ab5659f9d5d352ba0a23f1e99edd3d488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The Strategy participant of the Strategy design pattern. Base class for several strategies of transporting items to races. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a671ad3b1ff9163b4c18bddae2484a6d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a671ad3b1ff9163b4c18bddae2484a6d1">&#9670;&nbsp;</a></span>TransportStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TransportStrategy::TransportStrategy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Default constructor. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab5659f9d5d352ba0a23f1e99edd3d488"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5659f9d5d352ba0a23f1e99edd3d488">&#9670;&nbsp;</a></span>transport()</h2>
@@ -101,9 +126,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Pure virtual function for transporting items. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">container</td><td></td></tr>
+    <tr><td class="paramname">container</td><td>The container to be transported. </td></tr>
   </table>
   </dd>
 </dl>
