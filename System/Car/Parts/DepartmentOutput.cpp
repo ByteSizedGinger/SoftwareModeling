@@ -55,14 +55,18 @@ int DepartmentOutput::calculateSpeed() {
 
     int rtrn;
     if (next != nullptr) {
-        if ((next->getType()) != "base") {
+        /*if ((next->getType()) != "base") {
             averageSpeed += s + next->calculateSpeed();
             rtrn = averageSpeed;
         } else {
-            averageSpeed += s;
+            averageSpeed += s + next->calculateSpeed();
             rtrn = averageSpeed;
 
         }
+         */
+        averageSpeed += s + next->calculateSpeed();
+        rtrn = averageSpeed;
+
     }
     return rtrn;
 }
